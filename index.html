@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
         }
 
         body {
@@ -26,10 +26,10 @@
         }
 
         .site-title {
-            font-size: 56px;
-            font-weight: 500;
+            font-size: 48px;
+            font-weight: 400;
             color: #fff;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
             letter-spacing: 1px;
         }
 
@@ -37,84 +37,49 @@
         .left-menu {
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            gap: 16px;
         }
 
         .menu-item {
             color: #aaa;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 400;
             transition: 0.2s;
             width: fit-content;
-            border-bottom: 1px solid transparent;
-            padding-bottom: 4px;
         }
 
         .menu-item:hover {
             color: #fff;
-            border-bottom-color: #fff;
         }
 
-        /* Основной контент */
-        .content {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 120px 20px;
-        }
-
-        .section-title {
-            font-size: 32px;
-            font-weight: 400;
-            margin-bottom: 40px;
-            color: #fff;
-            border-bottom: 1px solid #2a2a2a;
-            padding-bottom: 12px;
-        }
-
-        .list {
-            list-style: none;
-        }
-
-        .list li {
-            color: #ccc;
-            font-size: 18px;
-            margin-bottom: 20px;
-            padding-left: 24px;
-            position: relative;
-            line-height: 1.5;
-        }
-
-        .list li::before {
-            content: "—";
-            color: #666;
-            position: absolute;
-            left: 0;
-        }
-
-        .demo-btn {
+        /* Кнопка "как пользоваться" */
+        .howto-btn {
+            margin-top: 30px;
             background: transparent;
-            border: 1.5px solid #2a2a2a;
-            color: #fff;
-            padding: 14px 36px;
+            border: 2px solid #4a90e2;
+            color: #4a90e2;
+            padding: 12px 28px;
             font-size: 16px;
-            margin-top: 40px;
+            font-weight: 400;
             cursor: pointer;
             transition: 0.2s;
+            width: fit-content;
             border-radius: 2px;
         }
 
-        .demo-btn:hover {
-            border-color: #888;
+        .howto-btn:hover {
+            background: #4a90e2;
+            color: #fff;
         }
 
+        /* Ссылки внизу */
         .footer {
             position: absolute;
             bottom: 40px;
             right: 60px;
             color: #2a2a2a;
-            font-size: 18px;
-            font-weight: 400;
+            font-size: 16px;
         }
 
         a {
@@ -127,56 +92,15 @@
     <div class="top-left">
         <div class="site-title">Shadow cheat</div>
         <div class="left-menu">
-            <a href="#" class="menu-item" onclick="showSection('features')">функции</a>
-            <a href="#" class="menu-item" onclick="showSection('pricing')">цены</a>
-            <a href="#" class="menu-item" onclick="showSection('howto')">как пользоваться</a>
+            <a href="features.html" class="menu-item">функции</a>
+            <a href="pricing.html" class="menu-item">цены</a>
             <a href="instruction.html" class="menu-item">инструкция по скачиванию →</a>
         </div>
-    </div>
-
-    <div class="content" id="content">
-        <div id="features-section" style="display: none;">
-            <h2 class="section-title">функции</h2>
-            <ul class="list">
-                <li>Aimbot — Silent Aim, Trigger Bot, No Recoil, No Spread, Rapid Fire, Auto Shoot, FOV Control, Prediction</li>
-                <li>Stealth — Full Invisible, No Collision, Anti-AFK, Ghost Mode, Admin Bypass, Log Cleaner, Tab Hiding, Stealth Walk</li>
-                <li>Visuals — Player ESP, Vehicle ESP, Skeleton ESP, Distance ESP, Health Bar, Armor Bar, Weapon ESP, 3D Radar</li>
-                <li>Protection — HWID Spoofer, IP Changer, Anti-Ban, Cleaner Mode, Signature Bypass, AC Bypass, Stealth Injection, Process Hider</li>
-            </ul>
-        </div>
-
-        <div id="pricing-section" style="display: none;">
-            <h2 class="section-title">цены</h2>
-            <ul class="list">
-                <li>7 дней — 450₽</li>
-                <li>1 месяц — 1400₽</li>
-                <li>1 год — 3500₽</li>
-                <li>Пробный ключ — 24 часа бесплатно</li>
-            </ul>
-            <button class="demo-btn" onclick="alert('Пробный ключ: SHADOW-24H-DEMO')">получить пробный ключ</button>
-        </div>
-
-        <div id="howto-section" style="display: block;">
-            <h2 class="section-title">как пользоваться</h2>
-            <ul class="list">
-                <li>1. Получи пробный ключ или купи подписку</li>
-                <li>2. Скачай лаунчер по ссылке (появится после получения ключа)</li>
-                <li>3. Запусти лаунчер от имени администратора</li>
-                <li>4. Введи ключ в программе</li>
-                <li>5. Запусти RAGEMP и нажми INSERT для открытия меню</li>
-            </ul>
-        </div>
+        
+        <!-- Кнопка "как пользоваться" под меню -->
+        <button class="howto-btn" onclick="window.location.href='howto.html'">как пользоваться</button>
     </div>
 
     <div class="footer">harmonqqgg</div>
-
-    <script>
-        function showSection(section) {
-            document.getElementById('features-section').style.display = 'none';
-            document.getElementById('pricing-section').style.display = 'none';
-            document.getElementById('howto-section').style.display = 'none';
-            document.getElementById(section + '-section').style.display = 'block';
-        }
-    </script>
 </body>
 </html>
