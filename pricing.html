@@ -13,10 +13,10 @@
         }
         body {
             background: #0b0c0e;
-            color: #fff;
-            min-height: 100vh;
             background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
             background-size: 40px 40px;
+            color: #fff;
+            min-height: 100vh;
         }
         .container {
             max-width: 1200px;
@@ -54,6 +54,7 @@
             padding: 40px;
             text-align: center;
             transition: 0.3s;
+            backdrop-filter: blur(10px);
         }
         .price-card:hover {
             border-color: rgba(255,255,255,0.2);
@@ -104,7 +105,6 @@
             <h1>Цены</h1>
             <div></div>
         </div>
-
         <div class="pricing-grid">
             <div class="price-card">
                 <div class="price-name">🔥 7 дней</div>
