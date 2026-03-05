@@ -31,7 +31,6 @@
             pointer-events: none;
         }
 
-        /* Верхняя шапка */
         .top-bar {
             position: fixed;
             top: 0;
@@ -101,21 +100,20 @@
             color: #fff;
         }
 
-        /* Контент поверх затемнения */
-        .container {
+        .main {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 100px 60px 50px;
+            padding: 100px 60px 0;
             position: relative;
             z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 100vh;
         }
 
         .left-panel {
-            position: fixed;
-            left: 60px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 2;
+            width: 40%;
         }
 
         .site-title {
@@ -164,31 +162,27 @@
         }
 
         .right-panel {
-            position: absolute;
-            right: 100px;
-            top: 50%;
-            transform: translateY(-50%);
-            max-width: 380px;
-            z-index: 2;
+            width: 35%;
         }
 
         .reasons-title {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 400;
             color: #fff;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             border-bottom: 1px solid rgba(255,255,255,0.2);
             padding-bottom: 12px;
         }
 
         .reason-item {
-            margin-bottom: 28px;
+            margin-bottom: 25px;
         }
 
         .reason-head {
             color: #4a7eb3;
             font-size: 18px;
             margin-bottom: 6px;
+            font-weight: 500;
         }
 
         .reason-desc {
@@ -198,37 +192,29 @@
         }
 
         .footer {
-            position: absolute;
-            bottom: 40px;
-            right: 80px;
+            position: fixed;
+            bottom: 30px;
+            right: 60px;
             color: #666;
             font-size: 14px;
             z-index: 2;
         }
 
-        @media (max-width: 768px) {
-            .container {
-                padding: 80px 20px 30px;
+        @media (max-width: 900px) {
+            .main {
+                flex-direction: column;
+                padding: 80px 20px;
             }
-            .left-panel {
-                position: static;
-                transform: none;
-                margin-bottom: 50px;
+            .left-panel, .right-panel {
+                width: 100%;
             }
             .right-panel {
-                position: static;
-                transform: none;
-                margin-top: 50px;
-            }
-            .footer {
-                position: static;
                 margin-top: 50px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Верхняя шапка -->
     <div class="top-bar">
         <div class="contact-wrapper">
             <button class="contact-btn">связаться с нами</button>
@@ -238,7 +224,8 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="main">
+        <!-- Левая часть -->
         <div class="left-panel">
             <div class="site-title">Shadow cheat</div>
             <div class="menu">
@@ -249,6 +236,7 @@
             <button class="howto-btn" onclick="window.location.href='howto.html'">как пользоваться</button>
         </div>
 
+        <!-- Правая часть -->
         <div class="right-panel">
             <div class="reasons-title">почему выбирают нас</div>
             
@@ -272,8 +260,8 @@
                 <div class="reason-desc">помогаем с установкой и решаем любые проблемы</div>
             </div>
         </div>
-
-        <div class="footer">harmonqqgg</div>
     </div>
+
+    <div class="footer">harmonqqgg</div>
 </body>
 </html>
