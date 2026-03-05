@@ -13,196 +13,162 @@
     }
 
     body {
-      background: linear-gradient(135deg, #0a0f1e 0%, #1a1f2e 100%);
-      color: #fff;
+      background: linear-gradient(135deg, #0c0f15 0%, #151a22 100%);
+      color: #e0e0e0;
       padding: 20px;
       position: relative;
       overflow-x: hidden;
     }
 
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at 20% 50%, rgba(100, 150, 255, 0.1) 0%, transparent 50%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 30px;
-      background: rgba(10, 15, 30, 0.8);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(100, 150, 255, 0.3);
-      box-shadow: 0 0 50px rgba(100, 150, 255, 0.2);
+      padding: 40px;
+      background: rgba(18, 22, 30, 0.95);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(100, 150, 255, 0.15);
+      box-shadow: 0 0 30px rgba(100, 150, 255, 0.1);
       position: relative;
       z-index: 1;
     }
 
     h1 {
       text-align: center;
-      font-size: 4rem;
-      letter-spacing: 8px;
+      font-size: 3.5rem;
+      letter-spacing: 5px;
       text-transform: uppercase;
       margin-bottom: 30px;
-      background: linear-gradient(135deg, #fff, #6496ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 30px rgba(100, 150, 255, 0.5);
+      color: #ffffff;
+      text-shadow: 0 0 15px rgba(100, 150, 255, 0.3);
+      font-weight: 400;
     }
 
-    /* RAGEMP МЕНЮ */
-    .ragemp-menu {
-      background: rgba(20, 25, 45, 0.9);
-      border: 1px solid #6496ff;
-      border-radius: 12px;
-      margin-bottom: 40px;
-      padding: 20px;
-      box-shadow: 0 10px 30px rgba(100, 150, 255, 0.2);
-      backdrop-filter: blur(10px);
+    /* WHY BEST SECTION - вместо меню */
+    .why-best {
+      background: rgba(25, 30, 40, 0.7);
+      border: 1px solid rgba(100, 150, 255, 0.2);
+      border-radius: 16px;
+      padding: 40px;
+      margin-bottom: 50px;
+      text-align: center;
     }
 
-    .menu-header {
+    .why-best h2 {
+      color: #a0c0ff;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      font-weight: 300;
+      letter-spacing: 2px;
+    }
+
+    .stats-grid {
       display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid #6496ff;
-      padding-bottom: 15px;
-      margin-bottom: 20px;
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #fff;
+      justify-content: center;
+      gap: 60px;
+      margin: 40px 0;
+      flex-wrap: wrap;
     }
 
-    .menu-grid {
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      color: #a0c0ff;
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      font-size: 1.2rem;
+      color: #8895b0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .features-highlight {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
+      margin: 40px 0;
     }
 
-    .menu-category {
-      background: rgba(30, 35, 55, 0.8);
-      border-radius: 10px;
-      padding: 15px;
-      border: 1px solid rgba(100, 150, 255, 0.3);
+    .highlight-item {
+      background: rgba(30, 35, 50, 0.5);
+      border: 1px solid rgba(100, 150, 255, 0.15);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: left;
     }
 
-    .category-title {
+    .highlight-item h3 {
+      color: #a0c0ff;
+      margin-bottom: 10px;
       font-size: 1.3rem;
-      color: #6496ff;
-      margin-bottom: 15px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid rgba(100, 150, 255, 0.3);
+      font-weight: 400;
     }
 
-    .menu-item {
-      display: flex;
-      justify-content: space-between;
-      padding: 8px 5px;
-      cursor: pointer;
-      transition: 0.2s;
-      border-radius: 4px;
+    .highlight-item p {
+      color: #a0a8c0;
+      font-size: 0.95rem;
+      line-height: 1.5;
     }
 
-    .menu-item:hover {
-      background: rgba(100, 150, 255, 0.1);
+    .reviews {
+      margin-top: 30px;
+      font-size: 1.3rem;
+      color: #a0c0ff;
     }
 
-    /* Кнопки в стиле Unicore */
+    .reviews span {
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+    /* Кнопки */
     .shadow-button {
-      background: linear-gradient(135deg, #6496ff, #2a4fa0);
-      border: none;
+      background: rgba(30, 35, 50, 0.8);
+      border: 1px solid rgba(100, 150, 255, 0.3);
       border-radius: 8px;
       padding: 12px 24px;
-      color: white;
-      font-weight: bold;
+      color: #e0e0e0;
+      font-weight: 500;
       font-size: 1rem;
       cursor: pointer;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(100, 150, 255, 0.3);
+      transition: all 0.2s ease;
       text-transform: uppercase;
       letter-spacing: 1px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .shadow-button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: left 0.5s ease;
-    }
-
-    .shadow-button:hover::before {
-      left: 100%;
     }
 
     .shadow-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(100, 150, 255, 0.5);
-      background: linear-gradient(135deg, #7aa5ff, #3a5fc0);
+      background: rgba(40, 45, 65, 0.8);
+      border-color: rgba(100, 150, 255, 0.5);
+      color: #ffffff;
     }
 
-    .shadow-button:active {
-      transform: translateY(1px);
-      box-shadow: 0 2px 10px rgba(100, 150, 255, 0.3);
+    .price-card {
+      background: rgba(25, 30, 42, 0.7);
+      border: 1px solid rgba(100, 150, 255, 0.2);
+      border-radius: 16px;
+      padding: 30px 20px;
+      text-align: center;
+      width: 250px;
+      transition: all 0.2s ease;
     }
 
-    /* Большая кнопка */
-    .shadow-button-large {
-      background: linear-gradient(135deg, #6496ff, #2a4fa0);
-      border: none;
-      border-radius: 12px;
-      padding: 20px 50px;
-      color: white;
-      font-weight: bold;
-      font-size: 1.8rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 8px 25px rgba(100, 150, 255, 0.4);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+    .price-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(100, 150, 255, 0.4);
+      box-shadow: 0 10px 30px rgba(100, 150, 255, 0.1);
+    }
+
+    .price {
+      font-size: 2.8rem;
+      font-weight: 300;
       margin: 20px 0;
+      color: #a0c0ff;
     }
 
-    .shadow-button-large::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .shadow-button-large:hover::before {
-      opacity: 1;
-    }
-
-    .shadow-button-large:hover {
-      transform: scale(1.05);
-      box-shadow: 0 15px 40px rgba(100, 150, 255, 0.6);
-    }
-
-    .shadow-button-large:active {
-      transform: scale(0.98);
-    }
-
-    /* Цены */
     .pricing {
       display: flex;
       justify-content: center;
@@ -211,76 +177,26 @@
       flex-wrap: wrap;
     }
 
-    .price-card {
-      background: linear-gradient(135deg, #1e2337, #151a2a);
-      border: 1px solid #6496ff;
-      border-radius: 16px;
-      padding: 30px 20px;
-      text-align: center;
-      width: 250px;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(100, 150, 255, 0.2);
-    }
-
-    .price-card::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle at 30% 30%, rgba(100, 150, 255, 0.2), transparent 70%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .price-card:hover::before {
-      opacity: 1;
-    }
-
-    .price-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(100, 150, 255, 0.4);
-      border-color: #fff;
-    }
-
-    .price {
-      font-size: 3rem;
-      font-weight: bold;
-      margin: 20px 0;
-      color: #6496ff;
-      text-shadow: 0 0 20px rgba(100, 150, 255, 0.5);
-    }
-
-    .price-card .shadow-button {
-      width: 100%;
-      margin-top: 15px;
-    }
-
-    /* Пробный ключ */
     .trial-section {
       text-align: center;
       margin: 50px 0;
       padding: 50px;
-      background: linear-gradient(135deg, #1a1f30, #0f1422);
+      background: rgba(22, 27, 37, 0.7);
+      border: 1px solid rgba(100, 150, 255, 0.2);
       border-radius: 24px;
-      border: 1px solid #6496ff;
-      box-shadow: 0 20px 50px rgba(100, 150, 255, 0.2);
     }
 
     .trial-key-box {
-      background: linear-gradient(135deg, #2a2f42, #1a1f32);
-      border: 1px solid #6496ff;
+      background: rgba(20, 25, 35, 0.9);
+      border: 1px solid rgba(100, 150, 255, 0.3);
       border-radius: 12px;
       padding: 20px;
       margin: 20px 0;
       font-size: 2rem;
-      font-weight: bold;
-      letter-spacing: 5px;
-      color: #fff;
-      box-shadow: inset 0 2px 5px rgba(0,0,0,0.5), 0 0 30px rgba(100, 150, 255, 0.3);
+      font-weight: 400;
+      letter-spacing: 3px;
+      color: #a0c0ff;
+      font-family: monospace;
     }
 
     .download-link {
@@ -288,48 +204,36 @@
       align-items: center;
       justify-content: center;
       gap: 15px;
-      background: linear-gradient(135deg, #6496ff, #2a4fa0);
-      border: none;
+      background: rgba(100, 150, 255, 0.1);
+      border: 1px solid rgba(100, 150, 255, 0.3);
       border-radius: 12px;
       padding: 18px 45px;
-      color: white;
-      font-weight: bold;
-      font-size: 1.8rem;
+      color: #ffffff;
+      font-size: 1.5rem;
       text-decoration: none;
       margin: 20px 0;
       text-transform: uppercase;
       letter-spacing: 2px;
-      box-shadow: 0 8px 25px rgba(100, 150, 255, 0.4);
-      transition: all 0.3s ease;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.2s ease;
     }
 
     .download-link:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 35px rgba(100, 150, 255, 0.6);
-      background: linear-gradient(135deg, #7aa5ff, #3a5fc0);
-    }
-
-    .download-arrow {
-      font-size: 2.2rem;
-      animation: bounce 1s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(5px); }
+      background: rgba(100, 150, 255, 0.15);
+      border-color: rgba(100, 150, 255, 0.5);
     }
 
     .cheat-description {
       margin: 20px 0;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: #a0a8c0;
       line-height: 1.6;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .cheat-description span {
-      color: #6496ff;
-      font-weight: bold;
+      color: #a0c0ff;
     }
 
     /* Функции */
@@ -341,72 +245,101 @@
     }
 
     .feature-block {
-      background: rgba(30, 35, 55, 0.8);
-      border: 1px solid rgba(100, 150, 255, 0.3);
+      background: rgba(25, 30, 42, 0.5);
+      border: 1px solid rgba(100, 150, 255, 0.15);
       border-radius: 12px;
-      padding: 20px;
+      padding: 25px;
     }
 
     .feature-block h3 {
-      color: #6496ff;
-      margin-bottom: 15px;
+      color: #a0c0ff;
+      margin-bottom: 20px;
       font-size: 1.4rem;
-      border-bottom: 1px solid rgba(100, 150, 255, 0.3);
-      padding-bottom: 8px;
+      font-weight: 400;
+      border-bottom: 1px solid rgba(100, 150, 255, 0.2);
+      padding-bottom: 10px;
     }
 
     .feature-list {
       list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px 20px;
     }
 
     .feature-list li {
       color: #a0a8c0;
-      font-size: 1rem;
-      margin-bottom: 8px;
+      font-size: 0.95rem;
       display: flex;
       align-items: center;
     }
 
     .feature-list li::before {
-      content: "●";
-      color: #6496ff;
-      margin-right: 10px;
-      font-size: 0.8rem;
+      content: "▹";
+      color: #a0c0ff;
+      margin-right: 8px;
+      font-size: 0.9rem;
     }
 
-    /* Инструкция */
     .instruction {
-      background: rgba(30, 35, 55, 0.8);
-      border: 1px solid #6496ff;
-      border-radius: 12px;
-      padding: 30px;
+      background: rgba(25, 30, 42, 0.5);
+      border: 1px solid rgba(100, 150, 255, 0.15);
+      border-radius: 16px;
+      padding: 40px;
       margin: 40px 0;
     }
 
     .instruction h3 {
-      color: #6496ff;
-      font-size: 2rem;
-      margin-bottom: 20px;
-      border-bottom: 1px solid #6496ff;
-      padding-bottom: 10px;
+      color: #a0c0ff;
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      font-weight: 400;
     }
 
     .instruction ol {
-      margin-left: 30px;
+      margin-left: 25px;
       color: #a0a8c0;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
 
     .instruction li {
-      margin-bottom: 15px;
+      margin-bottom: 12px;
+    }
+
+    .contact {
+      text-align: center;
+      margin-top: 60px;
+      padding: 40px;
+      border-top: 1px solid rgba(100, 150, 255, 0.15);
+    }
+
+    .discord {
+      display: inline-block;
+      background: rgba(100, 150, 255, 0.05);
+      border: 1px solid rgba(100, 150, 255, 0.2);
+      border-radius: 50px;
+      padding: 15px 40px;
+      margin-top: 20px;
+      font-size: 1.5rem;
+      color: #a0c0ff;
+      transition: all 0.2s ease;
+    }
+
+    .discord:hover {
+      background: rgba(100, 150, 255, 0.1);
+      border-color: rgba(100, 150, 255, 0.4);
+    }
+
+    .discord::before {
+      content: "💬";
+      margin-right: 10px;
     }
 
     .footer {
       text-align: center;
-      margin-top: 50px;
-      padding: 20px;
-      border-top: 1px solid rgba(100, 150, 255, 0.3);
-      color: #a0a8c0;
+      margin-top: 40px;
+      color: #607080;
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -414,54 +347,62 @@
 <div class="container">
   <h1>⚡ SHADOW CHEAT RAGEMP 2026 ⚡</h1>
 
-  <!-- RAGEMP МЕНЮ -->
-  <div class="ragemp-menu">
-    <div class="menu-header">
-      <span>SHADOW RAGEMP</span>
-      <span>v7.7.7</span>
+  <!-- ПОЧЕМУ ЧИТ ЛУЧШИЙ -->
+  <div class="why-best">
+    <h2>ПОЧЕМУ SHADOW — ЭТО ЛУЧШИЙ ВЫБОР?</h2>
+    
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">99.8%</div>
+        <div class="stat-label">АНДЕТЕКТ</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">ФУНКЦИЙ</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">САППОРТ</div>
+      </div>
     </div>
-    <div class="menu-grid">
-      <div class="menu-category">
-        <div class="category-title">AIMBOT</div>
-        <div class="menu-item"><span>Silent Aim</span><span>ON</span></div>
-        <div class="menu-item"><span>Trigger Bot</span><span>120ms</span></div>
-        <div class="menu-item"><span>FOV</span><span>180°</span></div>
-        <div class="menu-item"><span>Smooth</span><span>85%</span></div>
+
+    <div class="features-highlight">
+      <div class="highlight-item">
+        <h3>🔒 ПОЛНАЯ АНОНИМНОСТЬ</h3>
+        <p>HWID спуфер, IP ченджер, клинер логов — нас невозможно обнаружить. Работаем через защищенные протоколы.</p>
       </div>
-      <div class="menu-category">
-        <div class="category-title">VISUALS</div>
-        <div class="menu-item"><span>ESP</span><span>BOX</span></div>
-        <div class="menu-item"><span>Skeleton</span><span>ON</span></div>
-        <div class="menu-item"><span>Distance</span><span>ON</span></div>
-        <div class="menu-item"><span>Health</span><span>BAR</span></div>
+      <div class="highlight-item">
+        <h3>⚡ МАКСИМАЛЬНАЯ ПРОИЗВОДИТЕЛЬНОСТЬ</h3>
+        <p>Оптимизированный код не нагружает систему. Стабильные 60+ FPS даже на слабых ПК.</p>
       </div>
-      <div class="menu-category">
-        <div class="category-title">MISC</div>
-        <div class="menu-item"><span>Godmode</span><span>ON</span></div>
-        <div class="menu-item"><span>Speed</span><span>2.5x</span></div>
-        <div class="menu-item"><span>Noclip</span><span>OFF</span></div>
-        <div class="menu-item"><span>Invisible</span><span>ON</span></div>
+      <div class="highlight-item">
+        <h3>🛡️ ПРОФЕССИОНАЛЬНАЯ ЗАЩИТА</h3>
+        <p>Обход всех известных античитов (RageMP, FiveM). Еженедельные обновления сигнатур.</p>
       </div>
+    </div>
+
+    <div class="reviews">
+      <span>🔥 БОЛЕЕ 1.300+ ПОЛОЖИТЕЛЬНЫХ ОТЗЫВОВ</span> ОТ ИГРОКОВ
     </div>
   </div>
 
   <!-- ЦЕНЫ -->
   <div class="pricing">
     <div class="price-card">
-      <div style="font-size: 2rem;">🔥</div>
-      <div style="font-size: 1.5rem;">7 ДНЕЙ</div>
+      <div style="font-size: 1.8rem;">🔥</div>
+      <div style="font-size: 1.3rem; margin-top: 10px;">7 ДНЕЙ</div>
       <div class="price">450₽</div>
       <button class="shadow-button" onclick="alert('Покупка временно недоступна. Используйте пробный ключ.')">КУПИТЬ</button>
     </div>
     <div class="price-card">
-      <div style="font-size: 2rem;">💎</div>
-      <div style="font-size: 1.5rem;">1 МЕСЯЦ</div>
+      <div style="font-size: 1.8rem;">💎</div>
+      <div style="font-size: 1.3rem; margin-top: 10px;">1 МЕСЯЦ</div>
       <div class="price">1400₽</div>
       <button class="shadow-button" onclick="alert('Покупка временно недоступна. Используйте пробный ключ.')">КУПИТЬ</button>
     </div>
     <div class="price-card">
-      <div style="font-size: 2rem;">👑</div>
-      <div style="font-size: 1.5rem;">НАВСЕГДА</div>
+      <div style="font-size: 1.8rem;">👑</div>
+      <div style="font-size: 1.3rem; margin-top: 10px;">НАВСЕГДА</div>
       <div class="price">3500₽</div>
       <button class="shadow-button" onclick="alert('Покупка временно недоступна. Используйте пробный ключ.')">КУПИТЬ</button>
     </div>
@@ -469,13 +410,13 @@
 
   <!-- ПРОБНЫЙ КЛЮЧ -->
   <div class="trial-section">
-    <h2 style="font-size: 2.5rem;">🎁 ПРОБНЫЙ КЛЮЧ 24 ЧАСА</h2>
-    <button class="shadow-button-large" id="trialBtn">АКТИВИРОВАТЬ ПРОБНЫЙ КЛЮЧ</button>
+    <h2 style="font-size: 2.2rem; color: #a0c0ff; font-weight: 300; margin-bottom: 20px;">🎁 ПРОБНЫЙ КЛЮЧ 24 ЧАСА</h2>
+    <button class="shadow-button" style="padding: 15px 50px; font-size: 1.3rem;" id="trialBtn">АКТИВИРОВАТЬ</button>
     <div id="trialMessage"></div>
   </div>
 
-  <!-- ФУНКЦИИ -->
-  <h2 style="color: #6496ff; font-size: 2.5rem; text-align: center; margin: 40px 0;">ФУНКЦИИ ДАННОГО ЧИТА</h2>
+  <!-- ФУНКЦИИ ЧИТА (ЗДЕСЬ ОДИН РАЗ) -->
+  <h2 style="color: #a0c0ff; font-size: 2.2rem; text-align: center; margin: 60px 0 30px; font-weight: 300;">ФУНКЦИИ SHADOW CHEAT</h2>
   
   <div class="features-grid">
     <div class="feature-block">
@@ -558,23 +499,29 @@
     </div>
   </div>
 
-  <!-- ИНСТРУКЦИЯ ПО СКАЧИВАНИЮ -->
+  <!-- ИНСТРУКЦИЯ -->
   <div class="instruction">
-    <h3>📘 ИНСТРУКЦИЯ ПО СКАЧИВАНИЮ</h3>
+    <h3>📘 ИНСТРУКЦИЯ</h3>
     <ol>
-      <li>Нажми кнопку "Активировать пробный ключ" выше</li>
-      <li>Скопируй сгенерированный ключ</li>
-      <li>Скачай лаунчер по появившейся ссылке со стрелкой вниз</li>
+      <li>Нажми кнопку "Активировать" в разделе пробного ключа</li>
+      <li>Скопируй полученный ключ</li>
+      <li>Скачай лаунчер по ссылке (появится после активации)</li>
       <li>Запусти лаунчер от имени администратора</li>
-      <li>Введи ключ в поле активации лаунчера</li>
-      <li>Нажми "Активировать" и запусти RageMP</li>
-      <li>В игре нажми INSERT для открытия меню</li>
+      <li>Введи ключ и нажми "Активировать"</li>
+      <li>Запусти RageMP и нажми INSERT</li>
     </ol>
   </div>
 
+  <!-- СВЯЗАТЬСЯ С НАМИ -->
+  <div class="contact">
+    <h3 style="color: #a0c0ff; font-size: 1.8rem; font-weight: 300;">СВЯЗАТЬСЯ С НАМИ</h3>
+    <div class="discord">harmonqqgg</div>
+    <p style="margin-top: 20px; color: #607080;">По всем вопросам — пиши в Discord</p>
+  </div>
+
   <div class="footer">
-    <div>© 2026 | SHADOW CHEAT RAGEMP | Ultimate Edition v7.7.7</div>
-    <div style="margin-top: 10px;">✅ 100% UNDETECTED • 🔥 50+ FEATURES • ⚡ DAILY UPDATES</div>
+    <div>© 2026 | SHADOW CHEAT RAGEMP</div>
+    <div style="margin-top: 5px;">v7.7.7</div>
   </div>
 </div>
 
@@ -591,19 +538,18 @@
         <div class="trial-key-box">🔑 ${key}</div>
         
         <div class="cheat-description">
-          <span>SHADOW CHEAT RAGEMP 2026</span> — это лучший софт на рынке для RageMP. 
-          Абсолютно невидимый для античита, 50+ функций, регулярные обновления, 
-          поддержка 24/7. Выбирают профессионалы!
+          <span>SHADOW CHEAT RAGEMP 2026</span> — лучший софт на рынке с более чем 1300+ отзывами. 
+          Полная анонимность, 50+ функций, защита от всех античитов. Выбирают профи!
         </div>
         
         <a href="#" class="download-link" onclick="alert('Файл будет доступен позже. Заглушка.')">
           <span>📥 СКАЧАТЬ LAUNCHER</span>
-          <span class="download-arrow">⬇️</span>
+          <span style="font-size: 1.8rem;">⬇️</span>
         </a>
       `;
       trialUsed = true;
     } else {
-      msgDiv.innerHTML = '<p style="color: #ff5555; font-size: 1.5rem;">⛔ ТЫ УЖЕ ПОЛУЧИЛ ПРОБНЫЙ КЛЮЧ!</p>';
+      msgDiv.innerHTML = '<p style="color: #ff9999; font-size: 1.2rem; margin-top: 20px;">⛔ Ты уже получил пробный ключ. Один ключ на пользователя.</p>';
     }
   });
 </script>
