@@ -11,22 +11,27 @@
             box-sizing: border-box;
             font-family: 'Inter', sans-serif;
         }
+
         body {
             background: #0b0c0e;
             color: #fff;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
             background-size: 40px 40px;
         }
+
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 40px;
-            text-align: center;
+            padding: 40px 20px;
         }
+
+        /* Hero секция */
+        .hero {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+
         .logo {
             font-size: 48px;
             font-weight: 700;
@@ -35,17 +40,69 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .sub {
             color: #888;
             font-size: 18px;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
+
+        /* Блок преимуществ (тот самый, что ты просил) */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .stat-item {
+            background: rgba(20,20,25,0.5);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 30px 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+        }
+
+        .stat-item:hover {
+            border-color: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #fff, #a0a0a0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            color: #888;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-desc {
+            color: #666;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        /* Сетка меню */
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 30px;
-            margin-top: 40px;
+            margin-top: 60px;
         }
+
         .menu-item {
             background: rgba(20,20,25,0.5);
             border: 1px solid rgba(255,255,255,0.05);
@@ -54,35 +111,71 @@
             text-decoration: none;
             color: #fff;
             transition: 0.3s;
+            text-align: center;
         }
+
         .menu-item:hover {
             border-color: rgba(255,255,255,0.2);
             transform: translateY(-5px);
         }
+
         .menu-icon {
             font-size: 48px;
             margin-bottom: 20px;
         }
+
         .menu-item h2 {
             font-size: 24px;
             margin-bottom: 10px;
         }
+
         .menu-item p {
             color: #888;
             font-size: 14px;
         }
-        @media (max-width: 600px) {
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
             .menu-grid {
                 grid-template-columns: 1fr;
+            }
+            .logo {
+                font-size: 36px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo">SHADOW CHEAT</div>
-        <div class="sub">Выбери раздел</div>
-        
+        <!-- Герой (как было) -->
+        <div class="hero">
+            <div class="logo">SHADOW CHEAT</div>
+            <div class="sub">Премиум софт для RAGEMP с полной защитой</div>
+        </div>
+
+        <!-- 🔥 НОВЫЙ БЛОК: Почему выбирают нас -->
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">99.8%</div>
+                <div class="stat-label">АНДЕТЕКТ</div>
+                <div class="stat-desc">Обход всех античитов включая Easy Anti-Cheat и BattlEye</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">ФУНКЦИЙ</div>
+                <div class="stat-desc">Aimbot, ESP, Stealth, Protection и многое другое</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">ПОДДЕРЖКА</div>
+                <div class="stat-desc">Техническая поддержка и регулярные обновления</div>
+            </div>
+        </div>
+
+        <!-- Меню навигации (как было) -->
         <div class="menu-grid">
             <a href="login.html" class="menu-item">
                 <div class="menu-icon">🔑</div>
@@ -99,7 +192,7 @@
                 <h2>Цены</h2>
                 <p>Тарифы и подписки</p>
             </a>
-            <a href="#" class="menu-item" onclick="alert('Скоро')">
+            <a href="#" class="menu-item" onclick="alert('Скоро будет доступно')">
                 <div class="menu-icon">📁</div>
                 <h2>Конфиги</h2>
                 <p>Скрипты и настройки</p>
