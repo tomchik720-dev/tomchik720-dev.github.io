@@ -3,92 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHADOW</title>
+    <title>Shadow cheat</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
         }
 
         body {
-            background: #000;
+            background: #0e0e12;
             color: #fff;
-            font-family: system-ui, -apple-system, sans-serif;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            min-height: 100vh;
         }
 
-        .content {
-            text-align: center;
+        /* Верхний левый угол */
+        .top-left {
+            position: absolute;
+            top: 40px;
+            left: 40px;
         }
 
-        h1 {
-            font-size: 48px;
+        .site-title {
+            font-size: 42px;
             font-weight: 400;
-            margin-bottom: 8px;
-            letter-spacing: 1px;
+            color: #fff;
+            margin-bottom: 30px;
         }
 
-        .desc {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 32px;
-        }
-
-        .nav {
+        /* Меню слева */
+        .left-menu {
             display: flex;
-            gap: 24px;
-            justify-content: center;
-            margin-bottom: 32px;
+            flex-direction: column;
+            gap: 16px;
         }
 
-        .nav a {
-            color: #888;
+        .menu-item {
+            color: #aaa;
             text-decoration: none;
-            font-size: 14px;
-        }
-
-        .nav a:hover {
-            color: #fff;
-        }
-
-        button {
-            background: none;
-            border: 1px solid #333;
-            color: #fff;
-            padding: 8px 24px;
-            font-size: 14px;
+            font-size: 18px;
+            font-weight: 400;
+            transition: 0.2s;
             cursor: pointer;
+            width: fit-content;
         }
 
-        button:hover {
-            border-color: #666;
+        .menu-item:hover {
+            color: #fff;
         }
 
+        /* Основной контент */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+
+        /* Заголовок раздела */
+        .section-title {
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 40px;
+            color: #fff;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+
+        /* Список инструкций */
+        .instruction-list {
+            list-style: none;
+        }
+
+        .instruction-list li {
+            color: #ccc;
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .instruction-list li::before {
+            content: "•";
+            color: #888;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Кнопка для примера */
+        .demo-btn {
+            background: transparent;
+            border: 1px solid #444;
+            color: #fff;
+            padding: 10px 30px;
+            font-size: 16px;
+            margin-top: 30px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .demo-btn:hover {
+            border-color: #888;
+        }
+
+        /* Футер с Discord */
         .footer {
-            margin-top: 48px;
-            color: #333;
-            font-size: 12px;
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            color: #444;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
-    <div class="content">
-        <h1>SHADOW</h1>
-        <div class="desc">ragemp cheat</div>
+    <!-- Верхний левый угол -->
+    <div class="top-left">
+        <div class="site-title">Shadow cheat</div>
         
-        <div class="nav">
-            <a href="features.html">функции</a>
-            <a href="pricing.html">цены</a>
-            <a href="login.html">вход</a>
+        <!-- Меню (под надписью) -->
+        <div class="left-menu">
+            <a href="#" class="menu-item" onclick="showSection('features')">функции</a>
+            <a href="#" class="menu-item" onclick="showSection('pricing')">цены</a>
+            <a href="#" class="menu-item" onclick="showSection('howto')">как пользоваться</a>
+            <a href="#" class="menu-item" onclick="showSection('download')">инструкция по скачиванию</a>
+        </div>
+    </div>
+
+    <!-- Основной контент (меняется при клике) -->
+    <div class="content" id="content">
+        <div id="features-section" style="display: none;">
+            <h2 class="section-title">функции</h2>
+            <ul class="instruction-list">
+                <li>Aimbot (Silent Aim, Trigger Bot)</li>
+                <li>ESP (Player, Vehicle, Skeleton)</li>
+                <li>Stealth (Invisible, No Collision)</li>
+                <li>Protection (HWID Spoofer, Anti-Ban)</li>
+                <li>50+ функций для RAGEMP</li>
+            </ul>
         </div>
 
-        <button onclick="alert('SHADOW-24H-DEMO')">пробный ключ</button>
+        <div id="pricing-section" style="display: none;">
+            <h2 class="section-title">цены</h2>
+            <ul class="instruction-list">
+                <li>7 дней — 450₽</li>
+                <li>1 месяц — 1400₽</li>
+                <li>1 год — 3500₽</li>
+                <li>Пробный ключ — 24 часа бесплатно</li>
+            </ul>
+        </div>
 
-        <div class="footer">harmonqqgg</div>
+        <div id="howto-section" style="display: none;">
+            <h2 class="section-title">как пользоваться</h2>
+            <ul class="instruction-list">
+                <li>1. Получи ключ (пробный или купи)</li>
+                <li>2. Скачай лаунчер по ссылке</li>
+                <li>3. Запусти от имени администратора</li>
+                <li>4. Введи ключ в программе</li>
+                <li>5. Запусти RAGEMP и нажми INSERT</li>
+            </ul>
+        </div>
+
+        <div id="download-section" style="display: block;">
+            <h2 class="section-title">инструкция по скачиванию</h2>
+            <ul class="instruction-list">
+                <li>Отключить антивирус (Windows Defender, Avast и т.д.)</li>
+                <li>Скачать Microsoft Visual C++ (ссылка появится)</li>
+                <li>Отключить SmartScreen в настройках Windows</li>
+                <li>Добавить папку с читом в исключения</li>
+                <li>Запускать только от имени администратора</li>
+            </ul>
+            <button class="demo-btn" onclick="alert('Ссылка появится после активации ключа')">скачать</button>
+        </div>
     </div>
+
+    <!-- Discord внизу справа -->
+    <div class="footer">harmonqqgg</div>
+
+    <script>
+        function showSection(section) {
+            // Скрываем все секции
+            document.getElementById('features-section').style.display = 'none';
+            document.getElementById('pricing-section').style.display = 'none';
+            document.getElementById('howto-section').style.display = 'none';
+            document.getElementById('download-section').style.display = 'none';
+            
+            // Показываем нужную
+            document.getElementById(section + '-section').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
