@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инструкция — Shadow cheat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: #0a0c12;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        .top-left {
+            position: absolute;
+            top: 50px;
+            left: 60px;
+        }
+
+        .site-title {
+            font-size: 56px;
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 40px;
+        }
+
+        .back-link {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 18px;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .back-link:hover {
+            color: #fff;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 140px 20px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 400;
+            margin-bottom: 50px;
+            border-bottom: 1px solid #2a2a2a;
+            padding-bottom: 15px;
+        }
+
+        .instruction-list {
+            list-style: none;
+        }
+
+        .instruction-list li {
+            color: #ccc;
+            font-size: 18px;
+            margin-bottom: 30px;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .instruction-list li::before {
+            content: "→";
+            color: #888;
+            position: absolute;
+            left: 0;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            color: #2a2a2a;
+            font-size: 18px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-left">
+        <div class="site-title">Shadow cheat</div>
+        <a href="index.html" class="back-link">← назад</a>
+    </div>
+
+    <div class="content">
+        <h2 class="section-title">инструкция по скачиванию</h2>
+        <ul class="instruction-list">
+            <li>Отключи антивирус (Windows Defender, Avast, Kaspersky) — иначе файлы удалятся</li>
+            <li>Скачай и установи Microsoft Visual C++ (ссылка ниже)</li>
+            <li>Отключи SmartScreen в настройках Windows</li>
+            <li>Добавь папку с читом в исключения антивируса</li>
+            <li>Запускай лаунчер только от имени администратора</li>
+            <li>После запуска введи ключ (пробный или купленный)</li>
+            <li>Если не работает — отключи антивирус полностью на время установки</li>
+        </ul>
+        <button class="demo-btn" style="background: transparent; border: 1.5px solid #2a2a2a; color: #fff; padding: 14px 36px; font-size: 16px; margin-top: 50px; cursor: pointer; border-radius: 2px;" onclick="alert('Ссылка на Visual C++: https://aka.ms/vs/17/release/vc_redist.x64.exe')">📥 скачать visual c++</button>
+    </div>
+
+    <div class="footer">harmonqqgg</div>
+</body>
+</html>
