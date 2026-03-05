@@ -9,385 +9,149 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         body {
+            background: #0a0c0f;
             min-height: 100vh;
-            background: url('bg.jpg') no-repeat center center fixed;
-            background-size: cover;
-            position: relative;
             color: #fff;
-        }
-
-        /* Затемнение фона */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: -1;
         }
 
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 30px 50px;
+            padding: 40px 60px;
         }
 
-        /* Верхняя панель */
-        .top-bar {
+        /* Левая панель с навигацией */
+        .left-panel {
+            position: fixed;
+            left: 60px;
+            top: 50%;
+            transform: translateY(-50%);
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
+            flex-direction: column;
+            gap: 30px;
         }
 
-        .logo-section h1 {
-            font-size: 42px;
+        .logo {
+            font-size: 32px;
             font-weight: 700;
+            letter-spacing: 2px;
             background: linear-gradient(135deg, #fff, #a0a0a0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: 2px;
-        }
-
-        .user-section {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .balance {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 30px;
-            padding: 10px 25px;
-            font-size: 18px;
-            font-weight: 600;
-            color: #fff;
-        }
-
-        .promo-btn {
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.2);
-            color: #fff;
-            padding: 10px 25px;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: 0.2s;
-            font-size: 16px;
-        }
-
-        .promo-btn:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: rgba(255,255,255,0.3);
-        }
-
-        /* Навигация */
-        .nav-menu {
-            margin-bottom: 40px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 20px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .nav-links a {
-            color: #aaa;
-            text-decoration: none;
-            font-size: 16px;
-            transition: 0.2s;
-            letter-spacing: 0.5px;
-        }
-
-        .nav-links a:hover {
-            color: #fff;
-        }
-
-        /* HWID статус */
-        .hwid-section {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 15px 25px;
-            margin-bottom: 50px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .hwid-label {
-            color: #888;
-            font-size: 16px;
-        }
-
-        .hwid-value {
-            color: #ff5555;
-            font-weight: 600;
-            font-size: 18px;
-        }
-
-        .hwid-btn {
-            background: rgba(76, 130, 250, 0.2);
-            border: 1px solid #4c82fa;
-            color: #4c82fa;
-            padding: 8px 25px;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: 0.2s;
-            margin-left: auto;
-        }
-
-        .hwid-btn:hover {
-            background: #4c82fa;
-            color: #fff;
-        }
-
-        /* Карточки тарифов */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .price-card {
-            background: rgba(20, 20, 30, 0.6);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 24px;
-            padding: 40px 30px;
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .price-card:hover {
-            border-color: rgba(255,255,255,0.2);
-            transform: translateY(-5px);
-        }
-
-        .price-card.trial {
-            border: 2px solid #4c82fa;
-            position: relative;
-        }
-
-        .trial-badge {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #4c82fa;
-            color: #fff;
-            padding: 6px 20px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .price-name {
-            font-size: 24px;
-            font-weight: 600;
             margin-bottom: 20px;
-            color: #fff;
         }
 
-        .price-value {
-            font-size: 42px;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 30px;
-        }
-
-        .price-value span {
-            font-size: 16px;
+        .nav-item {
             color: #888;
-        }
-
-        .price-features {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-
-        .price-features li {
-            color: #aaa;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .price-btn {
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.2);
-            color: #fff;
-            padding: 14px;
-            width: 100%;
-            border-radius: 40px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
+            text-decoration: none;
+            font-size: 18px;
             transition: 0.2s;
+            cursor: pointer;
         }
 
-        .price-btn:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: rgba(255,255,255,0.3);
+        .nav-item:hover {
+            color: #fff;
+            transform: translateX(5px);
         }
 
-        .price-btn.trial-btn {
-            background: #4c82fa;
-            border-color: #4c82fa;
-        }
-
-        .price-btn.trial-btn:hover {
-            background: #3a6cdb;
-        }
-
-        /* Кнопка пополнения */
-        .deposit-section {
+        /* Центральный контент */
+        .center-content {
+            max-width: 600px;
+            margin: 0 auto;
             text-align: center;
-            margin: 40px 0;
+            padding: 100px 0;
         }
 
-        .deposit-btn {
+        .title {
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff, #a0a0a0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .trial-btn {
             background: transparent;
             border: 2px solid #4c82fa;
             color: #4c82fa;
-            padding: 16px 50px;
+            padding: 16px 48px;
             border-radius: 40px;
             font-size: 18px;
             font-weight: 600;
             cursor: pointer;
             transition: 0.2s;
+            margin-bottom: 60px;
         }
 
-        .deposit-btn:hover {
+        .trial-btn:hover {
             background: #4c82fa;
             color: #fff;
         }
 
-        /* Футер */
-        .footer {
-            margin-top: 60px;
-            padding: 30px 0;
-            border-top: 1px solid rgba(255,255,255,0.1);
+        /* Ссылки внизу */
+        .bottom-links {
+            position: fixed;
+            bottom: 40px;
+            right: 60px;
             display: flex;
-            justify-content: space-between;
-            color: #888;
+            gap: 30px;
+        }
+
+        .bottom-link {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .bottom-link:hover {
+            color: #fff;
         }
 
         @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-            .top-bar {
-                flex-direction: column;
-                gap: 20px;
-            }
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-            .nav-links {
-                gap: 20px;
-            }
+            .container { padding: 20px; }
+            .left-panel { position: static; transform: none; margin-bottom: 40px; }
+            .bottom-links { position: static; justify-content: center; margin-top: 40px; }
+            .title { font-size: 48px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Верхняя панель -->
-        <div class="top-bar">
-            <div class="logo-section">
-                <h1>SHADOW CHEAT</h1>
-            </div>
-            <div class="user-section">
-                <div class="balance">💰 0.00 ₽</div>
-                <button class="promo-btn" onclick="alert('Введите промокод')">🎟️ Активация промокода</button>
-            </div>
+        <!-- Левое меню -->
+        <div class="left-panel">
+            <div class="logo">SHADOW</div>
+            <a href="index.html" class="nav-item">Главная</a>
+            <a href="features.html" class="nav-item">Функции</a>
+            <a href="pricing.html" class="nav-item">Цены</a>
+            <a href="#" class="nav-item">Поддержка</a>
+            <a href="login.html" class="nav-item">Войти</a>
         </div>
 
-        <!-- Навигация (чуть ниже) -->
-        <div class="nav-menu">
-            <div class="nav-links">
-                <a href="#">Авторизация</a>
-                <a href="features.html">Функции</a>
-                <a href="#">О приложении</a>
-                <a href="pricing.html">Цены</a>
-                <a href="#">Инструкция</a>
-            </div>
+        <!-- Центр -->
+        <div class="center-content">
+            <div class="title">SHADOW</div>
+            <div class="subtitle">Премиум софт для RAGEMP</div>
+            <button class="trial-btn" onclick="alert('Пробный ключ: SHADOW-24H-DEMO')">Получить пробный ключ</button>
         </div>
 
-        <!-- HWID статус -->
-        <div class="hwid-section">
-            <span class="hwid-label">📌 Статус HWID:</span>
-            <span class="hwid-value">не привязан</span>
-            <button class="hwid-btn" onclick="alert('Привязка HWID')">Привязать</button>
-        </div>
-
-        <!-- Тарифы -->
-        <div class="pricing-grid">
-            <!-- Пробная подписка (1 день) -->
-            <div class="price-card trial">
-                <div class="trial-badge">🔥 Пробный</div>
-                <div class="price-name">1 день</div>
-                <div class="price-value">0 ₽</div>
-                <ul class="price-features">
-                    <li>Все функции</li>
-                    <li>Ограничение по времени</li>
-                    <li>Тестовый доступ</li>
-                </ul>
-                <button class="price-btn trial-btn" onclick="alert('Пробный ключ')">Активировать</button>
-            </div>
-
-            <!-- 7 дней -->
-            <div class="price-card">
-                <div class="price-name">7 дней</div>
-                <div class="price-value">450 ₽</div>
-                <ul class="price-features">
-                    <li>Все функции</li>
-                    <li>Обновления</li>
-                    <li>Техподдержка</li>
-                </ul>
-                <button class="price-btn" onclick="alert('Выберите способ оплаты')">Купить</button>
-            </div>
-
-            <!-- 1 месяц -->
-            <div class="price-card">
-                <div class="price-name">1 месяц</div>
-                <div class="price-value">1 400 ₽</div>
-                <ul class="price-features">
-                    <li>Все функции</li>
-                    <li>Приоритетные обновления</li>
-                    <li>VIP поддержка</li>
-                </ul>
-                <button class="price-btn" onclick="alert('Выберите способ оплаты')">Купить</button>
-            </div>
-        </div>
-
-        <!-- Кнопка пополнения баланса -->
-        <div class="deposit-section">
-            <button class="deposit-btn" onclick="alert('Пополнение баланса')">💳 Пополнить баланс</button>
-        </div>
-
-        <!-- Футер (опционально) -->
-        <div class="footer">
-            <div>© 2026 SHADOW CHEAT</div>
-            <div>Discord: harmonqqgg</div>
+        <!-- Нижние ссылки -->
+        <div class="bottom-links">
+            <a href="#" class="bottom-link">Telegram</a>
+            <a href="#" class="bottom-link">Discord</a>
+            <a href="#" class="bottom-link">Youtube</a>
         </div>
     </div>
-
-    <script>
-        // Демо-функции (заглушки)
-        function showPromo() {
-            alert('Введите промокод');
-        }
-    </script>
 </body>
 </html>
