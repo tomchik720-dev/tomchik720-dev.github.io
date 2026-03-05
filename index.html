@@ -9,33 +9,96 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         body {
-            min-height: 100vh;
-            background: url('ChatGPT Image 5 мар. 2026 г., 21_43_39.png') no-repeat center center fixed;
-            background-size: cover;
+            background: #0e1117;
             color: #fff;
+            min-height: 100vh;
         }
 
-        body::after {
-            content: '';
+        /* Верхняя шапка */
+        .top-bar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 1;
-            pointer-events: none;
+            padding: 15px 50px;
+            background: rgba(14, 17, 23, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #2a2f3a;
+            display: flex;
+            justify-content: flex-end;
+            z-index: 1000;
         }
 
-        .left-panel {
+        .contact-wrapper {
+            position: relative;
+        }
+
+        .contact-btn {
+            background: transparent;
+            border: 1px solid #4a7eb3;
+            color: #4a7eb3;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .contact-btn:hover {
+            background: #4a7eb3;
+            color: #fff;
+        }
+
+        .contact-dropdown {
             position: absolute;
-            top: 60px;
-            left: 80px;
-            z-index: 2;
+            top: 45px;
+            right: 0;
+            background: #1a1f2a;
+            border: 1px solid #2a2f3a;
+            border-radius: 12px;
+            padding: 15px 25px;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.2s;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .contact-wrapper:hover .contact-dropdown {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .contact-dropdown a {
+            color: #4a7eb3;
+            text-decoration: none;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-dropdown a:hover {
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 100px 60px 50px;
+        }
+
+        /* Левая панель */
+        .left-panel {
+            position: fixed;
+            left: 60px;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
         .site-title {
@@ -62,7 +125,7 @@
         }
 
         .menu-item:hover {
-            color: #fff;
+            color: #4a7eb3;
         }
 
         .howto-btn {
@@ -76,7 +139,6 @@
             cursor: pointer;
             transition: 0.2s;
             width: fit-content;
-            z-index: 2;
         }
 
         .howto-btn:hover {
@@ -84,13 +146,13 @@
             color: #fff;
         }
 
+        /* Правая часть с причинами */
         .right-panel {
             position: absolute;
             right: 100px;
             top: 50%;
             transform: translateY(-50%);
             max-width: 380px;
-            z-index: 2;
         }
 
         .reasons-title {
@@ -122,49 +184,80 @@
             position: absolute;
             bottom: 40px;
             right: 80px;
-            color: #888;
-            font-size: 18px;
-            z-index: 2;
+            color: #666;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 80px 20px 30px;
+            }
+            .left-panel {
+                position: static;
+                transform: none;
+                margin-bottom: 50px;
+            }
+            .right-panel {
+                position: static;
+                transform: none;
+                margin-top: 50px;
+            }
+            .footer {
+                position: static;
+                margin-top: 50px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Левая часть -->
-    <div class="left-panel">
-        <div class="site-title">Shadow cheat</div>
-        <div class="menu">
-            <a href="features.html" class="menu-item">функции</a>
-            <a href="pricing.html" class="menu-item">цены</a>
-            <a href="instruction.html" class="menu-item">инструкция по скачиванию →</a>
-        </div>
-        <button class="howto-btn" onclick="window.location.href='howto.html'">как пользоваться</button>
-    </div>
-
-    <!-- Правая часть с причинами -->
-    <div class="right-panel">
-        <div class="reasons-title">почему выбирают нас</div>
-        
-        <div class="reason-item">
-            <div class="reason-head">99.8% андетект</div>
-            <div class="reason-desc">обходим все современные античиты, включая Easy Anti-Cheat и BattlEye</div>
-        </div>
-
-        <div class="reason-item">
-            <div class="reason-head">50+ функций</div>
-            <div class="reason-desc">aimbot, esp, stealth, protection — полный набор для комфортной игры</div>
-        </div>
-
-        <div class="reason-item">
-            <div class="reason-head">регулярные обновления</div>
-            <div class="reason-desc">поддержка актуальных версий RAGEMP и новых серверов</div>
-        </div>
-
-        <div class="reason-item">
-            <div class="reason-head">24/7 поддержка</div>
-            <div class="reason-desc">помогаем с установкой и решаем любые проблемы</div>
+    <!-- Верхняя шапка с контактами -->
+    <div class="top-bar">
+        <div class="contact-wrapper">
+            <button class="contact-btn">связаться с нами</button>
+            <div class="contact-dropdown">
+                <a href="https://discord.gg/harmonqqgg" target="_blank">💬 Discord: harmonqqgg</a>
+            </div>
         </div>
     </div>
 
-    <div class="footer">harmonqqgg</div>
+    <div class="container">
+        <!-- Левая часть -->
+        <div class="left-panel">
+            <div class="site-title">Shadow cheat</div>
+            <div class="menu">
+                <a href="features.html" class="menu-item">функции</a>
+                <a href="pricing.html" class="menu-item">цены</a>
+                <a href="instruction.html" class="menu-item">инструкция по скачиванию →</a>
+            </div>
+            <button class="howto-btn" onclick="window.location.href='howto.html'">как пользоваться</button>
+        </div>
+
+        <!-- Правая часть с причинами -->
+        <div class="right-panel">
+            <div class="reasons-title">почему выбирают нас</div>
+            
+            <div class="reason-item">
+                <div class="reason-head">99.8% андетект</div>
+                <div class="reason-desc">обходим все современные античиты, включая Easy Anti-Cheat и BattlEye</div>
+            </div>
+
+            <div class="reason-item">
+                <div class="reason-head">50+ функций</div>
+                <div class="reason-desc">aimbot, esp, stealth, protection — полный набор для комфортной игры</div>
+            </div>
+
+            <div class="reason-item">
+                <div class="reason-head">регулярные обновления</div>
+                <div class="reason-desc">поддержка актуальных версий RAGEMP и новых серверов</div>
+            </div>
+
+            <div class="reason-item">
+                <div class="reason-head">24/7 поддержка</div>
+                <div class="reason-desc">помогаем с установкой и решаем любые проблемы</div>
+            </div>
+        </div>
+
+        <div class="footer">harmonqqgg</div>
+    </div>
 </body>
 </html>
