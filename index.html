@@ -3,154 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHADOW CHEAT</title>
+    <title>SHADOW</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
 
         body {
-            background: #0a0c0f;
-            min-height: 100vh;
+            background: #030507;
             color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 40px 60px;
-        }
-
-        /* Левая панель с навигацией */
-        .left-panel {
-            position: fixed;
-            left: 60px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .logo {
-            font-size: 32px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            background: linear-gradient(135deg, #fff, #a0a0a0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
-        }
-
-        .nav-item {
-            color: #888;
-            text-decoration: none;
-            font-size: 18px;
-            transition: 0.2s;
-            cursor: pointer;
-        }
-
-        .nav-item:hover {
-            color: #fff;
-            transform: translateX(5px);
-        }
-
-        /* Центральный контент */
-        .center-content {
-            max-width: 600px;
-            margin: 0 auto;
             text-align: center;
-            padding: 100px 0;
+            max-width: 600px;
+            padding: 20px;
         }
 
-        .title {
-            font-size: 72px;
-            font-weight: 700;
+        h1 {
+            font-size: 64px;
+            font-weight: 500;
+            letter-spacing: 2px;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #fff, #a0a0a0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #fff;
         }
 
-        .subtitle {
-            color: #888;
-            font-size: 18px;
+        p {
+            color: #666;
+            font-size: 16px;
             margin-bottom: 40px;
         }
 
-        .trial-btn {
-            background: transparent;
-            border: 2px solid #4c82fa;
-            color: #4c82fa;
-            padding: 16px 48px;
-            border-radius: 40px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.2s;
+        .menu {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
             margin-bottom: 60px;
         }
 
-        .trial-btn:hover {
-            background: #4c82fa;
-            color: #fff;
-        }
-
-        /* Ссылки внизу */
-        .bottom-links {
-            position: fixed;
-            bottom: 40px;
-            right: 60px;
-            display: flex;
-            gap: 30px;
-        }
-
-        .bottom-link {
-            color: #666;
+        .menu a {
+            color: #888;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 16px;
             transition: 0.2s;
         }
 
-        .bottom-link:hover {
+        .menu a:hover {
             color: #fff;
         }
 
-        @media (max-width: 768px) {
-            .container { padding: 20px; }
-            .left-panel { position: static; transform: none; margin-bottom: 40px; }
-            .bottom-links { position: static; justify-content: center; margin-top: 40px; }
-            .title { font-size: 48px; }
+        button {
+            background: transparent;
+            border: 1px solid #333;
+            color: #fff;
+            padding: 12px 32px;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            border-color: #666;
+        }
+
+        .footer {
+            margin-top: 80px;
+            color: #444;
+            font-size: 12px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Левое меню -->
-        <div class="left-panel">
-            <div class="logo">SHADOW</div>
-            <a href="index.html" class="nav-item">Главная</a>
-            <a href="features.html" class="nav-item">Функции</a>
-            <a href="pricing.html" class="nav-item">Цены</a>
-            <a href="#" class="nav-item">Поддержка</a>
-            <a href="login.html" class="nav-item">Войти</a>
+        <h1>SHADOW</h1>
+        <p>ragemp cheat</p>
+
+        <div class="menu">
+            <a href="features.html">функции</a>
+            <a href="pricing.html">цены</a>
+            <a href="login.html">вход</a>
         </div>
 
-        <!-- Центр -->
-        <div class="center-content">
-            <div class="title">SHADOW</div>
-            <div class="subtitle">Премиум софт для RAGEMP</div>
-            <button class="trial-btn" onclick="alert('Пробный ключ: SHADOW-24H-DEMO')">Получить пробный ключ</button>
-        </div>
+        <button onclick="alert('SHADOW-24H-DEMO')">пробный ключ</button>
 
-        <!-- Нижние ссылки -->
-        <div class="bottom-links">
-            <a href="#" class="bottom-link">Telegram</a>
-            <a href="#" class="bottom-link">Discord</a>
-            <a href="#" class="bottom-link">Youtube</a>
+        <div class="footer">
+            harmonqqgg
         </div>
     </div>
 </body>
