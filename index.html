@@ -3,492 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHADOW | ПРЕМИУМ ЧИТЫ</title>
+    <title>SHADOW CHEAT | Главная</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', sans-serif;
         }
-
         body {
             background: #0b0c0e;
-            background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
             color: #fff;
             min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-
-        /* Header */
-        .header {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 24px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            justify-content: center;
+            background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
         }
-
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            text-align: center;
+        }
         .logo {
-            font-size: 28px;
+            font-size: 48px;
             font-weight: 700;
-            letter-spacing: 1px;
+            margin-bottom: 20px;
             background: linear-gradient(135deg, #fff, #a0a0a0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
-        .nav {
-            display: flex;
-            gap: 48px;
-        }
-
-        .nav a {
-            color: #888;
-            text-decoration: none;
-            font-size: 15px;
-            transition: 0.2s;
-        }
-
-        .nav a:hover {
-            color: #fff;
-        }
-
-        /* Hero */
-        .hero {
-            text-align: center;
-            padding: 80px 0 60px;
-        }
-
-        .hero-title {
-            font-size: 56px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #fff, #aaa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-sub {
+        .sub {
             color: #888;
             font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto 40px;
+            margin-bottom: 60px;
         }
-
-        /* Product grid */
-        .product-grid {
+        .menu-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin: 60px 0;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
         }
-
-        .product-card {
-            background: rgba(20, 20, 25, 0.5);
-            backdrop-filter: blur(10px);
+        .menu-item {
+            background: rgba(20,20,25,0.5);
             border: 1px solid rgba(255,255,255,0.05);
             border-radius: 24px;
             padding: 40px 30px;
-            transition: 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-        }
-
-        .product-card:hover {
-            border-color: rgba(255,255,255,0.15);
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-        }
-
-        .product-icon {
-            font-size: 48px;
-            margin-bottom: 24px;
-        }
-
-        .product-name {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .product-price {
-            font-size: 36px;
-            font-weight: 700;
+            text-decoration: none;
             color: #fff;
-            margin-bottom: 24px;
+            transition: 0.3s;
         }
-
-        .product-price span {
-            font-size: 16px;
-            color: #666;
-            font-weight: 400;
+        .menu-item:hover {
+            border-color: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
         }
-
-        .product-features {
-            list-style: none;
-            margin: 24px 0;
+        .menu-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
         }
-
-        .product-features li {
+        .menu-item h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .menu-item p {
             color: #888;
             font-size: 14px;
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-
-        .product-btn {
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.1);
-            color: #fff;
-            padding: 14px;
-            width: 100%;
-            border-radius: 40px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .product-btn:hover {
-            background: rgba(255,255,255,0.05);
-            border-color: rgba(255,255,255,0.2);
-        }
-
-        /* Features section */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            margin: 80px 0;
-        }
-
-        .feature-item {
-            text-align: center;
-            padding: 30px 20px;
-            background: rgba(20, 20, 25, 0.3);
-            border: 1px solid rgba(255,255,255,0.03);
-            border-radius: 16px;
-        }
-
-        .feature-icon {
-            font-size: 32px;
-            margin-bottom: 16px;
-        }
-
-        .feature-item h4 {
-            color: #fff;
-            margin-bottom: 8px;
-        }
-
-        .feature-item p {
-            color: #666;
-            font-size: 13px;
-        }
-
-        /* Key box */
-        .key-box {
-            background: rgba(20, 20, 25, 0.5);
-            border: 1px dashed rgba(255,255,255,0.1);
-            border-radius: 16px;
-            padding: 40px;
-            margin: 60px 0;
-            text-align: center;
-        }
-
-        .key-box h3 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: #fff;
-        }
-
-        .key-display {
-            font-family: monospace;
-            font-size: 32px;
-            letter-spacing: 4px;
-            color: #fff;
-            padding: 20px;
-            background: rgba(0,0,0,0.3);
-            border-radius: 12px;
-            margin: 20px 0;
-        }
-
-        /* Config section */
-        .config-section {
-            background: rgba(20, 20, 25, 0.5);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 24px;
-            padding: 40px;
-            margin: 60px 0;
-        }
-
-        .config-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .config-header h3 {
-            font-size: 24px;
-            color: #fff;
-        }
-
-        .config-btn {
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.1);
-            color: #fff;
-            padding: 10px 24px;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .config-btn:hover {
-            border-color: rgba(255,255,255,0.2);
-        }
-
-        /* Footer */
-        .footer {
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding: 40px 0;
-            margin-top: 60px;
-            display: flex;
-            justify-content: space-between;
-            color: #666;
-        }
-
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.8);
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-        }
-
-        .modal-content {
-            background: #1a1a1f;
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 24px;
-            padding: 40px;
-            max-width: 400px;
-            width: 90%;
-        }
-
-        .modal-content h3 {
-            color: #fff;
-            margin-bottom: 20px;
-        }
-
-        .modal-content input {
-            width: 100%;
-            padding: 14px;
-            background: #0b0c0e;
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px;
-            color: #fff;
-            margin-bottom: 20px;
-        }
-
-        .modal-close {
-            background: #2a2a2f;
-            color: #fff;
-            border: none;
-            padding: 12px;
-            width: 100%;
-            border-radius: 30px;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .product-grid {
+        @media (max-width: 600px) {
+            .menu-grid {
                 grid-template-columns: 1fr;
-            }
-            .features {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .hero-title {
-                font-size: 36px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
-        <div class="header">
-            <div class="logo">SHADOW</div>
-            <div class="nav">
-                <a href="#">Магазин</a>
-                <a href="#">Функции</a>
-                <a href="#">Поддержка</a>
-            </div>
-        </div>
-
-        <!-- Hero -->
-        <div class="hero">
-            <h1 class="hero-title">SHADOW CHEAT</h1>
-            <p class="hero-sub">Премиум софт для RAGEMP с полной защитой и регулярными обновлениями</p>
-            <button class="product-btn" style="width: auto; padding: 14px 48px;" onclick="generateTrialKey()">Пробный ключ</button>
-        </div>
-
-        <!-- Key display -->
-        <div id="keyDisplay"></div>
-
-        <!-- Product grid (тарифы в стиле магазина) -->
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="product-icon">🔥</div>
-                <div class="product-name">7 дней</div>
-                <div class="product-price">450₽ <span></span></div>
-                <ul class="product-features">
-                    <li>Все функции</li>
-                    <li>Обновления</li>
-                    <li>Техподдержка</li>
-                </ul>
-                <button class="product-btn" onclick="alert('Демо-режим')">Купить</button>
-            </div>
-            <div class="product-card">
-                <div class="product-icon">⚡</div>
-                <div class="product-name">1 месяц</div>
-                <div class="product-price">1 400₽ <span></span></div>
-                <ul class="product-features">
-                    <li>Все функции</li>
-                    <li>Приоритетные обновления</li>
-                    <li>VIP поддержка</li>
-                </ul>
-                <button class="product-btn" onclick="alert('Демо-режим')">Купить</button>
-            </div>
-            <div class="product-card">
-                <div class="product-icon">👑</div>
-                <div class="product-name">1 год</div>
-                <div class="product-price">3 500₽ <span></span></div>
-                <ul class="product-features">
-                    <li>Все функции</li>
-                    <li>Пожизненные обновления</li>
-                    <li>Личный менеджер</li>
-                </ul>
-                <button class="product-btn" onclick="alert('Демо-режим')">Купить</button>
-            </div>
-        </div>
-
-        <!-- Features -->
-        <div class="features">
-            <div class="feature-item">
-                <div class="feature-icon">🎯</div>
-                <h4>Aimbot</h4>
-                <p>Silent Aim, Trigger Bot, No Recoil</p>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">👻</div>
-                <h4>Stealth</h4>
-                <p>Full Invisible, Anti-AFK, Log Cleaner</p>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">🌍</div>
-                <h4>ESP</h4>
-                <p>Player, Vehicle, Skeleton, Distance</p>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">🛡️</div>
-                <h4>Protection</h4>
-                <p>HWID Spoofer, Anti-Ban, IP Changer</p>
-            </div>
-        </div>
-
-        <!-- Config section -->
-        <div class="config-section">
-            <div class="config-header">
-                <h3>📁 Конфиги и скрипты</h3>
-                <div>
-                    <button class="config-btn" style="margin-right: 12px;">+ Добавить</button>
-                    <button class="config-btn">📋 Список скриптов</button>
-                </div>
-            </div>
-            <p style="color: #888;">Код конфигурации для RAGEMP с оптимальными настройками ESP, Aimbot и Stealth.</p>
-        </div>
-
-        <!-- Promo button -->
-        <div style="text-align: center; margin: 40px 0;">
-            <button class="product-btn" style="width: auto; padding: 14px 48px;" onclick="showPromoModal()">🎟️ Активировать промокод</button>
-        </div>
-
-        <!-- Footer -->
-        <div class="footer">
-            <div>© 2026 SHADOW CHEAT</div>
-            <div>Discord: harmonqqgg</div>
+        <div class="logo">SHADOW CHEAT</div>
+        <div class="sub">Выбери раздел</div>
+        
+        <div class="menu-grid">
+            <a href="login.html" class="menu-item">
+                <div class="menu-icon">🔑</div>
+                <h2>Авторизация</h2>
+                <p>Вход и регистрация</p>
+            </a>
+            <a href="features.html" class="menu-item">
+                <div class="menu-icon">⚡</div>
+                <h2>Функции</h2>
+                <p>Все возможности чита</p>
+            </a>
+            <a href="pricing.html" class="menu-item">
+                <div class="menu-icon">💰</div>
+                <h2>Цены</h2>
+                <p>Тарифы и подписки</p>
+            </a>
+            <a href="#" class="menu-item" onclick="alert('Скоро')">
+                <div class="menu-icon">📁</div>
+                <h2>Конфиги</h2>
+                <p>Скрипты и настройки</p>
+            </a>
         </div>
     </div>
-
-    <!-- Modal -->
-    <div id="promoModal" class="modal">
-        <div class="modal-content">
-            <h3>Введите промокод</h3>
-            <input type="text" id="promoInput" placeholder="Промокод">
-            <button class="product-btn" style="margin-bottom: 10px;" onclick="activatePromo()">Активировать</button>
-            <button class="modal-close" onclick="closeModal()">Закрыть</button>
-        </div>
-    </div>
-
-    <script>
-        function generateTrialKey() {
-            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-            let key = 'SHADOW-';
-            for (let i = 0; i < 4; i++) {
-                for (let j = 0; j < 4; j++) {
-                    key += chars[Math.floor(Math.random() * chars.length)];
-                }
-                if (i < 3) key += '-';
-            }
-            
-            const displayDiv = document.getElementById('keyDisplay');
-            displayDiv.innerHTML = `
-                <div class="key-box">
-                    <h3>🔑 Пробный ключ</h3>
-                    <div class="key-display">${key}</div>
-                    <p style="color: #888; margin-bottom: 20px;">Ключ активирован на 24 часа</p>
-                    <a href="#" class="product-btn" style="text-decoration: none; display: inline-block; width: auto; padding: 14px 48px;" onclick="alert('Ссылка на Google Drive появится позже')">📥 Скачать</a>
-                </div>
-            `;
-        }
-
-        function showPromoModal() {
-            document.getElementById('promoModal').style.display = 'flex';
-        }
-
-        function closeModal() {
-            document.getElementById('promoModal').style.display = 'none';
-        }
-
-        function activatePromo() {
-            const promo = document.getElementById('promoInput').value;
-            if (promo) {
-                alert(`Промокод ${promo} активирован!`);
-                closeModal();
-            } else {
-                alert('Введите промокод');
-            }
-        }
-    </script>
 </body>
 </html>
