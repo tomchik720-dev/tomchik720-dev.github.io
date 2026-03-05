@@ -13,16 +13,31 @@
         }
 
         body {
-            background: #0c0f15;
-            color: #fff;
             min-height: 100vh;
+            background: url('ChatGPT Image 5 мар. 2026 г., 18_49_18.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
         }
 
-        /* Левая панель */
+        /* Затемнение фона — чтобы текст читался */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Весь контент поверх затемнения */
         .left-panel {
             position: absolute;
             top: 60px;
             left: 80px;
+            z-index: 2;
         }
 
         .site-title {
@@ -40,7 +55,7 @@
         }
 
         .menu-item {
-            color: #aaa;
+            color: #ddd;
             text-decoration: none;
             font-size: 20px;
             font-weight: 400;
@@ -63,6 +78,7 @@
             cursor: pointer;
             transition: 0.2s;
             width: fit-content;
+            z-index: 2;
         }
 
         .howto-btn:hover {
@@ -70,13 +86,13 @@
             color: #fff;
         }
 
-        /* Правая часть — причины */
         .right-panel {
             position: absolute;
             right: 100px;
             top: 50%;
             transform: translateY(-50%);
             max-width: 380px;
+            z-index: 2;
         }
 
         .reasons-title {
@@ -84,7 +100,7 @@
             font-weight: 400;
             color: #fff;
             margin-bottom: 35px;
-            border-bottom: 1px solid #2a2f3a;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
             padding-bottom: 12px;
         }
 
@@ -99,7 +115,7 @@
         }
 
         .reason-desc {
-            color: #999;
+            color: #ccc;
             font-size: 16px;
             line-height: 1.5;
         }
@@ -108,8 +124,9 @@
             position: absolute;
             bottom: 40px;
             right: 80px;
-            color: #333;
+            color: #888;
             font-size: 18px;
+            z-index: 2;
         }
     </style>
 </head>
