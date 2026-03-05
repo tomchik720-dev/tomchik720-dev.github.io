@@ -42,9 +42,68 @@
             border-bottom: 1px solid #2a2f3a;
             display: flex;
             justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
             z-index: 1000;
         }
 
+        /* Баланс */
+        .balance-wrapper {
+            position: relative;
+            z-index: 1001;
+        }
+
+        .balance-display {
+            background: transparent;
+            border: 1px solid #4a7eb3;
+            color: #4a7eb3;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: default;
+        }
+
+        .balance-dropdown {
+            position: absolute;
+            top: 45px;
+            right: 0;
+            background: #1a1f2a;
+            border: 1px solid #2a2f3a;
+            border-radius: 12px;
+            padding: 15px;
+            min-width: 150px;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.2s;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+
+        .balance-wrapper:hover .balance-dropdown {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .deposit-btn {
+            background: transparent;
+            border: 1px solid #4a7eb3;
+            color: #4a7eb3;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.2s;
+            width: 100%;
+        }
+
+        .deposit-btn:hover {
+            background: #4a7eb3;
+            color: #fff;
+        }
+
+        /* Контакты */
         .contact-wrapper {
             position: relative;
             z-index: 1001;
@@ -211,11 +270,24 @@
             .right-section {
                 margin-top: 50px;
             }
+            .top-bar {
+                padding: 15px 20px;
+                gap: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="top-bar">
+        <!-- Баланс -->
+        <div class="balance-wrapper">
+            <div class="balance-display">💰 0.00 ₽</div>
+            <div class="balance-dropdown">
+                <button class="deposit-btn" onclick="alert('Пополнение временно недоступно')">пополнить баланс</button>
+            </div>
+        </div>
+
+        <!-- Контакты -->
         <div class="contact-wrapper">
             <button class="contact-btn">связаться с нами</button>
             <div class="contact-dropdown">
