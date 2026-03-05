@@ -9,52 +9,62 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         body {
-            background: #0a0c12;
+            background: #0e1117;
             color: #fff;
             min-height: 100vh;
         }
 
-        .top-left {
-            position: absolute;
-            top: 50px;
-            left: 60px;
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 50px 30px;
         }
 
-        .site-title {
-            font-size: 56px;
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            font-size: 32px;
             font-weight: 500;
             color: #fff;
-            margin-bottom: 40px;
+            letter-spacing: 1px;
         }
 
         .back-link {
-            color: #aaa;
+            color: #888;
             text-decoration: none;
-            font-size: 18px;
-            display: inline-block;
-            margin-bottom: 30px;
+            font-size: 16px;
+            transition: 0.2s;
         }
 
         .back-link:hover {
-            color: #fff;
+            color: #4a7eb3;
         }
 
-        .content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 140px 20px;
+        .page-title {
+            font-size: 42px;
+            font-weight: 400;
+            color: #fff;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #2a2f3a;
+            padding-bottom: 15px;
         }
 
         .section-title {
-            font-size: 36px;
+            font-size: 28px;
             font-weight: 400;
-            margin-bottom: 50px;
-            border-bottom: 1px solid #2a2a2a;
-            padding-bottom: 15px;
+            color: #4a7eb3;
+            margin: 40px 0 20px;
+            border-left: 3px solid #4a7eb3;
+            padding-left: 15px;
         }
 
         .instruction-list {
@@ -63,54 +73,82 @@
 
         .instruction-list li {
             color: #ccc;
-            font-size: 18px;
-            margin-bottom: 30px;
+            font-size: 17px;
+            margin-bottom: 18px;
             padding-left: 25px;
             position: relative;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         .instruction-list li::before {
             content: "→";
-            color: #888;
+            color: #4a7eb3;
             position: absolute;
             left: 0;
+            font-weight: 500;
         }
 
-        .footer {
-            position: absolute;
-            bottom: 40px;
-            right: 60px;
-            color: #2a2a2a;
+        .warning {
+            background: rgba(255, 70, 70, 0.1);
+            border: 1px solid #ff4646;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 30px 0;
+            color: #ff9999;
+            font-weight: 500;
+            text-align: center;
             font-size: 18px;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
+        .footer {
+            margin-top: 60px;
+            padding: 30px 0;
+            border-top: 1px solid #2a2f3a;
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-    <div class="top-left">
-        <div class="site-title">Shadow cheat</div>
-        <a href="index.html" class="back-link">← назад</a>
-    </div>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Shadow cheat</div>
+            <a href="index.html" class="back-link">← на главную</a>
+        </div>
 
-    <div class="content">
-        <h2 class="section-title">инструкция по скачиванию</h2>
+        <h1 class="page-title">инструкция по скачиванию</h1>
+
+        <!-- 1. Установка библиотек и архиватора -->
+        <div class="section-title">1. Установка нужных библиотек и архиватора</div>
         <ul class="instruction-list">
-            <li>Отключи антивирус (Windows Defender, Avast, Kaspersky) — иначе файлы удалятся</li>
-            <li>Скачай и установи Microsoft Visual C++ (ссылка ниже)</li>
-            <li>Отключи SmartScreen в настройках Windows</li>
-            <li>Добавь папку с читом в исключения антивируса</li>
-            <li>Запускай лаунчер только от имени администратора</li>
-            <li>После запуска введи ключ (пробный или купленный)</li>
-            <li>Если не работает — отключи антивирус полностью на время установки</li>
+            <li><strong>.NET Framework</strong> — установите последнюю версию dotnet-sdk-9.0.301-win-x64.exe. Запустите приложение и следуйте инструкциям.</li>
+            <li><strong>Visual C++ Redistributable</strong> — установите последнюю версию vc_redist.x64.exe. Запустите приложение и следуйте инструкциям.</li>
+            <li><strong>DirectX</strong> — установите последнюю версию dxwebsetup.exe. Запустите приложение и следуйте инструкциям.</li>
+            <li><strong>WinRAR</strong> — установите последнюю версию (ссылка для загрузки).</li>
         </ul>
-        <button class="demo-btn" style="background: transparent; border: 1.5px solid #2a2a2a; color: #fff; padding: 14px 36px; font-size: 16px; margin-top: 50px; cursor: pointer; border-radius: 2px;" onclick="alert('Ссылка на Visual C++: https://aka.ms/vs/17/release/vc_redist.x64.exe')">📥 скачать visual c++</button>
-    </div>
 
-    <div class="footer">harmonqqgg</div>
+        <!-- 2. Подготовка системы -->
+        <div class="section-title">2. Подготовка системы к первому запуску</div>
+        
+        <ul class="instruction-list">
+            <li><strong>Отключение Безопасность Windows:</strong> перейдите в параметры системы (WIN + I), откройте "Безопасность Windows", отключите параметр "Защита в реальном времени".</li>
+            <li><strong>Окончательно отключите Безопасность Windows с помощью программы dControl:</strong> Google Drive — ссылка для загрузки (пароль 1234), Yandex Disk — ссылка для загрузки (пароль 1234), Mega — ссылка для загрузки.</li>
+            <li><strong>Удаление сторонних антивирусов:</strong> для этого я рекомендую использовать утилиту Antivirus Removal Tool. Ссылка для загрузки — Antivirus_Removal_Tool.zip. Извлеките файл из архива в любое удобное для вас место. Откройте приложение, затем просканируйте систему на наличие антивирусов, для этого нажмите кнопку Search. После сканирования если антивирус был обнаружен, удалите его через встроенный деинсталлятор.</li>
+            <li><strong>Отключение анти-чита других игр:</strong> откройте диспетчер задач и отключите из автозагрузки все анти-читы и лаунчеры.</li>
+            <li><strong>Отключение оверлеев:</strong> закройте все оверлеи которые появляются при запуске игры (например Riva, Discord, FPS, Action, Bandicam и прочие). Исключение: Оверлей Nvidia, Epic Games.</li>
+            <li><strong>Удалите reshade, redux и моды</strong> если используете.</li>
+        </ul>
+
+        <div class="warning">
+            ⚠️ ПОСЛЕ ВСЕХ ДЕЙСТВИЙ ПЕРЕЗАГРУЗИТЕ ПК — ОБЯЗАТЕЛЬНО!
+        </div>
+
+        <div class="footer">
+            <div>© 2026 Shadow cheat</div>
+            <div>harmonqqgg</div>
+        </div>
+    </div>
 </body>
 </html>
