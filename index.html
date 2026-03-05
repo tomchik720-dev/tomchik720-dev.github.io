@@ -9,41 +9,40 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
         }
 
         body {
-            background: #0a0c12;
+            background: #0c0f15;
             color: #fff;
             min-height: 100vh;
         }
 
-        /* Верхний левый угол */
-        .top-left {
+        /* Левая панель */
+        .left-panel {
             position: absolute;
-            top: 50px;
-            left: 60px;
+            top: 60px;
+            left: 80px;
         }
 
         .site-title {
-            font-size: 48px;
-            font-weight: 400;
+            font-size: 56px;
+            font-weight: 450;
             color: #fff;
-            margin-bottom: 35px;
-            letter-spacing: 1px;
+            margin-bottom: 45px;
+            letter-spacing: 1.5px;
         }
 
-        /* Меню */
-        .left-menu {
+        .menu {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 18px;
         }
 
         .menu-item {
             color: #aaa;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 400;
             transition: 0.2s;
             width: fit-content;
@@ -53,52 +52,102 @@
             color: #fff;
         }
 
-        /* Кнопка "как пользоваться" */
         .howto-btn {
-            margin-top: 30px;
+            margin-top: 40px;
             background: transparent;
-            border: 2px solid #4a90e2;
-            color: #4a90e2;
-            padding: 12px 28px;
-            font-size: 16px;
+            border: 2px solid #4a7eb3;
+            color: #4a7eb3;
+            padding: 14px 32px;
+            font-size: 18px;
             font-weight: 400;
             cursor: pointer;
             transition: 0.2s;
             width: fit-content;
-            border-radius: 2px;
         }
 
         .howto-btn:hover {
-            background: #4a90e2;
+            background: #4a7eb3;
             color: #fff;
         }
 
-        /* Ссылки внизу */
+        /* Правая часть — причины */
+        .right-panel {
+            position: absolute;
+            right: 100px;
+            top: 50%;
+            transform: translateY(-50%);
+            max-width: 380px;
+        }
+
+        .reasons-title {
+            font-size: 24px;
+            font-weight: 400;
+            color: #fff;
+            margin-bottom: 35px;
+            border-bottom: 1px solid #2a2f3a;
+            padding-bottom: 12px;
+        }
+
+        .reason-item {
+            margin-bottom: 28px;
+        }
+
+        .reason-head {
+            color: #4a7eb3;
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+
+        .reason-desc {
+            color: #999;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
         .footer {
             position: absolute;
             bottom: 40px;
-            right: 60px;
-            color: #2a2a2a;
-            font-size: 16px;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
+            right: 80px;
+            color: #333;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
-    <div class="top-left">
+    <!-- Левая часть -->
+    <div class="left-panel">
         <div class="site-title">Shadow cheat</div>
-        <div class="left-menu">
+        <div class="menu">
             <a href="features.html" class="menu-item">функции</a>
             <a href="pricing.html" class="menu-item">цены</a>
             <a href="instruction.html" class="menu-item">инструкция по скачиванию →</a>
         </div>
-        
-        <!-- Кнопка "как пользоваться" под меню -->
         <button class="howto-btn" onclick="window.location.href='howto.html'">как пользоваться</button>
+    </div>
+
+    <!-- Правая часть с причинами -->
+    <div class="right-panel">
+        <div class="reasons-title">почему выбирают нас</div>
+        
+        <div class="reason-item">
+            <div class="reason-head">99.8% андетект</div>
+            <div class="reason-desc">обходим все современные античиты, включая Easy Anti-Cheat и BattlEye</div>
+        </div>
+
+        <div class="reason-item">
+            <div class="reason-head">50+ функций</div>
+            <div class="reason-desc">aimbot, esp, stealth, protection — полный набор для комфортной игры</div>
+        </div>
+
+        <div class="reason-item">
+            <div class="reason-head">регулярные обновления</div>
+            <div class="reason-desc">поддержка актуальных версий RAGEMP и новых серверов</div>
+        </div>
+
+        <div class="reason-item">
+            <div class="reason-head">24/7 поддержка</div>
+            <div class="reason-desc">помогаем с установкой и решаем любые проблемы</div>
+        </div>
     </div>
 
     <div class="footer">harmonqqgg</div>
