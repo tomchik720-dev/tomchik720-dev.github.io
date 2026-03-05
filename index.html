@@ -31,12 +31,13 @@
             pointer-events: none;
         }
 
+        /* Шапка */
         .top-bar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            padding: 15px 50px;
+            padding: 15px 60px;
             background: rgba(14, 17, 23, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid #2a2f3a;
@@ -54,7 +55,7 @@
             background: transparent;
             border: 1px solid #4a7eb3;
             color: #4a7eb3;
-            padding: 8px 20px;
+            padding: 8px 24px;
             border-radius: 30px;
             font-size: 14px;
             font-weight: 500;
@@ -74,7 +75,7 @@
             background: #1a1f2a;
             border: 1px solid #2a2f3a;
             border-radius: 12px;
-            padding: 15px 25px;
+            padding: 12px 24px;
             min-width: 200px;
             opacity: 0;
             visibility: hidden;
@@ -93,14 +94,15 @@
             font-size: 16px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .contact-dropdown a:hover {
             color: #fff;
         }
 
-        .main {
+        /* Основной контент */
+        .main-content {
             max-width: 1400px;
             margin: 0 auto;
             padding: 100px 60px 0;
@@ -112,7 +114,8 @@
             min-height: 100vh;
         }
 
-        .left-panel {
+        /* Левая часть */
+        .left-section {
             width: 40%;
         }
 
@@ -124,13 +127,14 @@
             letter-spacing: 1.5px;
         }
 
-        .menu {
+        .nav-links {
             display: flex;
             flex-direction: column;
             gap: 18px;
+            margin-bottom: 40px;
         }
 
-        .menu-item {
+        .nav-link {
             color: #ddd;
             text-decoration: none;
             font-size: 20px;
@@ -139,12 +143,11 @@
             width: fit-content;
         }
 
-        .menu-item:hover {
+        .nav-link:hover {
             color: #4a7eb3;
         }
 
-        .howto-btn {
-            margin-top: 40px;
+        .howto-button {
             background: transparent;
             border: 2px solid #4a7eb3;
             color: #4a7eb3;
@@ -156,16 +159,17 @@
             width: fit-content;
         }
 
-        .howto-btn:hover {
+        .howto-button:hover {
             background: #4a7eb3;
             color: #fff;
         }
 
-        .right-panel {
+        /* Правая часть */
+        .right-section {
             width: 35%;
         }
 
-        .reasons-title {
+        .reasons-heading {
             font-size: 28px;
             font-weight: 400;
             color: #fff;
@@ -174,23 +178,24 @@
             padding-bottom: 12px;
         }
 
-        .reason-item {
+        .reason-block {
             margin-bottom: 25px;
         }
 
-        .reason-head {
+        .reason-title {
             color: #4a7eb3;
             font-size: 18px;
             margin-bottom: 6px;
             font-weight: 500;
         }
 
-        .reason-desc {
+        .reason-text {
             color: #ccc;
             font-size: 16px;
             line-height: 1.5;
         }
 
+        /* Футер */
         .footer {
             position: fixed;
             bottom: 30px;
@@ -201,20 +206,21 @@
         }
 
         @media (max-width: 900px) {
-            .main {
+            .main-content {
                 flex-direction: column;
                 padding: 80px 20px;
             }
-            .left-panel, .right-panel {
+            .left-section, .right-section {
                 width: 100%;
             }
-            .right-panel {
+            .right-section {
                 margin-top: 50px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Шапка сверху -->
     <div class="top-bar">
         <div class="contact-wrapper">
             <button class="contact-btn">связаться с нами</button>
@@ -224,40 +230,40 @@
         </div>
     </div>
 
-    <div class="main">
+    <div class="main-content">
         <!-- Левая часть -->
-        <div class="left-panel">
+        <div class="left-section">
             <div class="site-title">Shadow cheat</div>
-            <div class="menu">
-                <a href="features.html" class="menu-item">функции</a>
-                <a href="pricing.html" class="menu-item">цены</a>
-                <a href="instruction.html" class="menu-item">инструкция по скачиванию →</a>
+            <div class="nav-links">
+                <a href="features.html" class="nav-link">функции</a>
+                <a href="pricing.html" class="nav-link">цены</a>
+                <a href="instruction.html" class="nav-link">инструкция по скачиванию →</a>
             </div>
-            <button class="howto-btn" onclick="window.location.href='howto.html'">как пользоваться</button>
+            <button class="howto-button" onclick="window.location.href='howto.html'">как пользоваться</button>
         </div>
 
         <!-- Правая часть -->
-        <div class="right-panel">
-            <div class="reasons-title">почему выбирают нас</div>
+        <div class="right-section">
+            <div class="reasons-heading">почему выбирают нас</div>
             
-            <div class="reason-item">
-                <div class="reason-head">99.8% андетект</div>
-                <div class="reason-desc">обходим все современные античиты, включая Easy Anti-Cheat и BattlEye</div>
+            <div class="reason-block">
+                <div class="reason-title">99.8% андетект</div>
+                <div class="reason-text">обходим все современные античиты, включая Easy Anti-Cheat и BattlEye</div>
             </div>
 
-            <div class="reason-item">
-                <div class="reason-head">50+ функций</div>
-                <div class="reason-desc">aimbot, esp, stealth, protection — полный набор для комфортной игры</div>
+            <div class="reason-block">
+                <div class="reason-title">50+ функций</div>
+                <div class="reason-text">aimbot, esp, stealth, protection — полный набор для комфортной игры</div>
             </div>
 
-            <div class="reason-item">
-                <div class="reason-head">регулярные обновления</div>
-                <div class="reason-desc">поддержка актуальных версий RAGEMP и новых серверов</div>
+            <div class="reason-block">
+                <div class="reason-title">регулярные обновления</div>
+                <div class="reason-text">поддержка актуальных версий RAGEMP и новых серверов</div>
             </div>
 
-            <div class="reason-item">
-                <div class="reason-head">24/7 поддержка</div>
-                <div class="reason-desc">помогаем с установкой и решаем любые проблемы</div>
+            <div class="reason-block">
+                <div class="reason-title">24/7 поддержка</div>
+                <div class="reason-text">помогаем с установкой и решаем любые проблемы</div>
             </div>
         </div>
     </div>
