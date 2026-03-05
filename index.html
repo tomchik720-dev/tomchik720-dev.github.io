@@ -9,11 +9,11 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
         }
 
         body {
-            background: #0e0e12;
+            background: #0a0c12;
             color: #fff;
             min-height: 100vh;
         }
@@ -21,174 +21,160 @@
         /* Верхний левый угол */
         .top-left {
             position: absolute;
-            top: 40px;
-            left: 40px;
+            top: 50px;
+            left: 60px;
         }
 
         .site-title {
-            font-size: 42px;
-            font-weight: 400;
+            font-size: 56px;
+            font-weight: 500;
             color: #fff;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
         }
 
-        /* Меню слева */
+        /* Меню */
         .left-menu {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 18px;
         }
 
         .menu-item {
             color: #aaa;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 400;
             transition: 0.2s;
-            cursor: pointer;
             width: fit-content;
+            border-bottom: 1px solid transparent;
+            padding-bottom: 4px;
         }
 
         .menu-item:hover {
             color: #fff;
+            border-bottom-color: #fff;
         }
 
         /* Основной контент */
         .content {
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
-            padding: 100px 20px;
+            padding: 120px 20px;
         }
 
-        /* Заголовок раздела */
         .section-title {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 400;
             margin-bottom: 40px;
             color: #fff;
-            border-bottom: 1px solid #333;
-            padding-bottom: 10px;
+            border-bottom: 1px solid #2a2a2a;
+            padding-bottom: 12px;
         }
 
-        /* Список инструкций */
-        .instruction-list {
+        .list {
             list-style: none;
         }
 
-        .instruction-list li {
+        .list li {
             color: #ccc;
             font-size: 18px;
             margin-bottom: 20px;
-            padding-left: 20px;
+            padding-left: 24px;
             position: relative;
+            line-height: 1.5;
         }
 
-        .instruction-list li::before {
-            content: "•";
-            color: #888;
+        .list li::before {
+            content: "—";
+            color: #666;
             position: absolute;
             left: 0;
         }
 
-        /* Кнопка для примера */
         .demo-btn {
             background: transparent;
-            border: 1px solid #444;
+            border: 1.5px solid #2a2a2a;
             color: #fff;
-            padding: 10px 30px;
+            padding: 14px 36px;
             font-size: 16px;
-            margin-top: 30px;
+            margin-top: 40px;
             cursor: pointer;
             transition: 0.2s;
+            border-radius: 2px;
         }
 
         .demo-btn:hover {
             border-color: #888;
         }
 
-        /* Футер с Discord */
         .footer {
             position: absolute;
-            bottom: 30px;
-            right: 40px;
-            color: #444;
-            font-size: 16px;
+            bottom: 40px;
+            right: 60px;
+            color: #2a2a2a;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
         }
     </style>
 </head>
 <body>
-    <!-- Верхний левый угол -->
     <div class="top-left">
         <div class="site-title">Shadow cheat</div>
-        
-        <!-- Меню (под надписью) -->
         <div class="left-menu">
             <a href="#" class="menu-item" onclick="showSection('features')">функции</a>
             <a href="#" class="menu-item" onclick="showSection('pricing')">цены</a>
             <a href="#" class="menu-item" onclick="showSection('howto')">как пользоваться</a>
-            <a href="#" class="menu-item" onclick="showSection('download')">инструкция по скачиванию</a>
+            <a href="instruction.html" class="menu-item">инструкция по скачиванию →</a>
         </div>
     </div>
 
-    <!-- Основной контент (меняется при клике) -->
     <div class="content" id="content">
         <div id="features-section" style="display: none;">
             <h2 class="section-title">функции</h2>
-            <ul class="instruction-list">
-                <li>Aimbot (Silent Aim, Trigger Bot)</li>
-                <li>ESP (Player, Vehicle, Skeleton)</li>
-                <li>Stealth (Invisible, No Collision)</li>
-                <li>Protection (HWID Spoofer, Anti-Ban)</li>
-                <li>50+ функций для RAGEMP</li>
+            <ul class="list">
+                <li>Aimbot — Silent Aim, Trigger Bot, No Recoil, No Spread, Rapid Fire, Auto Shoot, FOV Control, Prediction</li>
+                <li>Stealth — Full Invisible, No Collision, Anti-AFK, Ghost Mode, Admin Bypass, Log Cleaner, Tab Hiding, Stealth Walk</li>
+                <li>Visuals — Player ESP, Vehicle ESP, Skeleton ESP, Distance ESP, Health Bar, Armor Bar, Weapon ESP, 3D Radar</li>
+                <li>Protection — HWID Spoofer, IP Changer, Anti-Ban, Cleaner Mode, Signature Bypass, AC Bypass, Stealth Injection, Process Hider</li>
             </ul>
         </div>
 
         <div id="pricing-section" style="display: none;">
             <h2 class="section-title">цены</h2>
-            <ul class="instruction-list">
+            <ul class="list">
                 <li>7 дней — 450₽</li>
                 <li>1 месяц — 1400₽</li>
                 <li>1 год — 3500₽</li>
                 <li>Пробный ключ — 24 часа бесплатно</li>
             </ul>
+            <button class="demo-btn" onclick="alert('Пробный ключ: SHADOW-24H-DEMO')">получить пробный ключ</button>
         </div>
 
-        <div id="howto-section" style="display: none;">
+        <div id="howto-section" style="display: block;">
             <h2 class="section-title">как пользоваться</h2>
-            <ul class="instruction-list">
-                <li>1. Получи ключ (пробный или купи)</li>
-                <li>2. Скачай лаунчер по ссылке</li>
-                <li>3. Запусти от имени администратора</li>
+            <ul class="list">
+                <li>1. Получи пробный ключ или купи подписку</li>
+                <li>2. Скачай лаунчер по ссылке (появится после получения ключа)</li>
+                <li>3. Запусти лаунчер от имени администратора</li>
                 <li>4. Введи ключ в программе</li>
-                <li>5. Запусти RAGEMP и нажми INSERT</li>
+                <li>5. Запусти RAGEMP и нажми INSERT для открытия меню</li>
             </ul>
-        </div>
-
-        <div id="download-section" style="display: block;">
-            <h2 class="section-title">инструкция по скачиванию</h2>
-            <ul class="instruction-list">
-                <li>Отключить антивирус (Windows Defender, Avast и т.д.)</li>
-                <li>Скачать Microsoft Visual C++ (ссылка появится)</li>
-                <li>Отключить SmartScreen в настройках Windows</li>
-                <li>Добавить папку с читом в исключения</li>
-                <li>Запускать только от имени администратора</li>
-            </ul>
-            <button class="demo-btn" onclick="alert('Ссылка появится после активации ключа')">скачать</button>
         </div>
     </div>
 
-    <!-- Discord внизу справа -->
     <div class="footer">harmonqqgg</div>
 
     <script>
         function showSection(section) {
-            // Скрываем все секции
             document.getElementById('features-section').style.display = 'none';
             document.getElementById('pricing-section').style.display = 'none';
             document.getElementById('howto-section').style.display = 'none';
-            document.getElementById('download-section').style.display = 'none';
-            
-            // Показываем нужную
             document.getElementById(section + '-section').style.display = 'block';
         }
     </script>
