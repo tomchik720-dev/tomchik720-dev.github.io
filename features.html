@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Функции | SHADOW</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        body {
+            background: #0b0c0e;
+            color: #fff;
+            min-height: 100vh;
+            background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+        .back-link {
+            color: #888;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            color: #fff;
+        }
+        h1 {
+            font-size: 48px;
+            background: linear-gradient(135deg, #fff, #a0a0a0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        .feature-block {
+            background: rgba(20,20,25,0.5);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 40px;
+        }
+        .feature-block h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+        .feature-list {
+            list-style: none;
+        }
+        .feature-list li {
+            color: #888;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 16px;
+        }
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back-link">← На главную</a>
+            <h1>Функции</h1>
+            <div></div>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-block">
+                <h2>🎯 Aimbot</h2>
+                <ul class="feature-list">
+                    <li>Silent Aim</li>
+                    <li>Trigger Bot</li>
+                    <li>No Recoil</li>
+                    <li>No Spread</li>
+                    <li>Rapid Fire</li>
+                    <li>Auto Shoot</li>
+                    <li>FOV Control</li>
+                    <li>Prediction</li>
+                </ul>
+            </div>
+            <div class="feature-block">
+                <h2>👻 Stealth</h2>
+                <ul class="feature-list">
+                    <li>Full Invisible</li>
+                    <li>No Collision</li>
+                    <li>Anti-AFK</li>
+                    <li>Ghost Mode</li>
+                    <li>Admin Bypass</li>
+                    <li>Log Cleaner</li>
+                    <li>Tab Hiding</li>
+                    <li>Stealth Walk</li>
+                </ul>
+            </div>
+            <div class="feature-block">
+                <h2>🌍 Visuals</h2>
+                <ul class="feature-list">
+                    <li>Player ESP</li>
+                    <li>Vehicle ESP</li>
+                    <li>Skeleton ESP</li>
+                    <li>Distance ESP</li>
+                    <li>Health Bar</li>
+                    <li>Armor Bar</li>
+                    <li>Weapon ESP</li>
+                    <li>3D Radar</li>
+                </ul>
+            </div>
+            <div class="feature-block">
+                <h2>🛡️ Protection</h2>
+                <ul class="feature-list">
+                    <li>HWID Spoofer</li>
+                    <li>IP Changer</li>
+                    <li>Anti-Ban</li>
+                    <li>Cleaner Mode</li>
+                    <li>Signature Bypass</li>
+                    <li>AC Bypass</li>
+                    <li>Stealth Injection</li>
+                    <li>Process Hider</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цены | SHADOW</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        body {
+            background: #0b0c0e;
+            color: #fff;
+            min-height: 100vh;
+            background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+        .back-link {
+            color: #888;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            color: #fff;
+        }
+        h1 {
+            font-size: 48px;
+            background: linear-gradient(135deg, #fff, #a0a0a0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .price-card {
+            background: rgba(20,20,25,0.5);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .price-card:hover {
+            border-color: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
+        }
+        .price-name {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .price-value {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+        .price-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        .price-features li {
+            color: #888;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .price-btn {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #fff;
+            padding: 14px;
+            width: 100%;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .price-btn:hover {
+            border-color: rgba(255,255,255,0.2);
+        }
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back-link">← На главную</a>
+            <h1>Цены</h1>
+            <div></div>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="price-card">
+                <div class="price-name">🔥 7 дней</div>
+                <div class="price-value">450₽</div>
+                <ul class="price-features">
+                    <li>Все функции</li>
+                    <li>Обновления</li>
+                    <li>Техподдержка</li>
+                </ul>
+                <button class="price-btn" onclick="alert('Демо')">Выбрать</button>
+            </div>
+            <div class="price-card">
+                <div class="price-name">⚡ 1 месяц</div>
+                <div class="price-value">1 400₽</div>
+                <ul class="price-features">
+                    <li>Все функции</li>
+                    <li>Приоритетные обновления</li>
+                    <li>VIP поддержка</li>
+                </ul>
+                <button class="price-btn" onclick="alert('Демо')">Выбрать</button>
+            </div>
+            <div class="price-card">
+                <div class="price-name">👑 1 год</div>
+                <div class="price-value">3 500₽</div>
+                <ul class="price-features">
+                    <li>Все функции</li>
+                    <li>Пожизненные обновления</li>
+                    <li>Личный менеджер</li>
+                </ul>
+                <button class="price-btn" onclick="alert('Демо')">Выбрать</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
