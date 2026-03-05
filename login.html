@@ -13,23 +13,21 @@
         }
         body {
             background: #0b0c0e;
-            color: #fff;
-            min-height: 100vh;
             background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
             background-size: 40px 40px;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .container {
             max-width: 400px;
-            margin: 100px auto;
             padding: 40px;
             background: rgba(20,20,25,0.5);
             border: 1px solid rgba(255,255,255,0.05);
             border-radius: 24px;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 32px;
+            backdrop-filter: blur(10px);
         }
         .back-link {
             display: inline-block;
@@ -39,6 +37,11 @@
         }
         .back-link:hover {
             color: #fff;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
         }
         input {
             width: 100%;
@@ -57,7 +60,6 @@
             color: #fff;
             border-radius: 40px;
             cursor: pointer;
-            margin-bottom: 10px;
             transition: 0.2s;
         }
         button:hover {
@@ -80,11 +82,9 @@
     <div class="container">
         <a href="index.html" class="back-link">← На главную</a>
         <h1>Авторизация</h1>
-        
         <input type="text" placeholder="Логин">
         <input type="password" placeholder="Пароль">
         <button>Войти</button>
-        
         <div class="link">
             <a href="#">Нет аккаунта? Регистрация</a>
         </div>
