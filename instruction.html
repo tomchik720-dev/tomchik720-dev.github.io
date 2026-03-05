@@ -78,6 +78,7 @@
             padding-left: 25px;
             position: relative;
             line-height: 1.5;
+            word-wrap: break-word;
         }
 
         .instruction-list li::before {
@@ -86,6 +87,17 @@
             position: absolute;
             left: 0;
             font-weight: 500;
+        }
+
+        .instruction-list a {
+            color: #4a7eb3;
+            text-decoration: none;
+            border-bottom: 1px dashed #4a7eb3;
+        }
+
+        .instruction-list a:hover {
+            color: #fff;
+            border-bottom-color: #fff;
         }
 
         .warning {
@@ -123,10 +135,10 @@
         <!-- 1. Установка библиотек и архиватора -->
         <div class="section-title">1. Установка нужных библиотек и архиватора</div>
         <ul class="instruction-list">
-            <li><strong>.NET Framework</strong> — установите последнюю версию dotnet-sdk-9.0.301-win-x64.exe. Запустите приложение и следуйте инструкциям.</li>
-            <li><strong>Visual C++ Redistributable</strong> — установите последнюю версию vc_redist.x64.exe. Запустите приложение и следуйте инструкциям.</li>
-            <li><strong>DirectX</strong> — установите последнюю версию dxwebsetup.exe. Запустите приложение и следуйте инструкциям.</li>
-            <li><strong>WinRAR</strong> — установите последнюю версию (ссылка для загрузки).</li>
+            <li><strong>.NET Framework</strong> — установите последнюю версию <a href="https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.301/dotnet-sdk-9.0.301-win-x64.exe" target="_blank">dotnet-sdk-9.0.301-win-x64.exe</a>. Запустите приложение и следуйте инструкциям.</li>
+            <li><strong>Visual C++ Redistributable</strong> — установите последнюю версию <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe" target="_blank">vc_redist.x64.exe</a>. Запустите приложение и следуйте инструкциям.</li>
+            <li><strong>DirectX</strong> — установите последнюю версию <a href="https://download.microsoft.com/download/1/7/1/1718ccc4-6315-4d8e-9543-8e28a4e18c4c/dxwebsetup.exe" target="_blank">dxwebsetup.exe</a>. Запустите приложение и следуйте инструкциям.</li>
+            <li><strong>WinRAR</strong> — установите последнюю версию (<a href="https://www.win-rar.com/fileadmin/winrar-versions/winrar/winrar-x64-713ru.exe" target="_blank">ссылка для загрузки</a>).</li>
         </ul>
 
         <!-- 2. Подготовка системы -->
@@ -134,8 +146,8 @@
         
         <ul class="instruction-list">
             <li><strong>Отключение Безопасность Windows:</strong> перейдите в параметры системы (WIN + I), откройте "Безопасность Windows", отключите параметр "Защита в реальном времени".</li>
-            <li><strong>Окончательно отключите Безопасность Windows с помощью программы dControl:</strong> Google Drive — ссылка для загрузки (пароль 1234), Yandex Disk — ссылка для загрузки (пароль 1234), Mega — ссылка для загрузки.</li>
-            <li><strong>Удаление сторонних антивирусов:</strong> для этого я рекомендую использовать утилиту Antivirus Removal Tool. Ссылка для загрузки — Antivirus_Removal_Tool.zip. Извлеките файл из архива в любое удобное для вас место. Откройте приложение, затем просканируйте систему на наличие антивирусов, для этого нажмите кнопку Search. После сканирования если антивирус был обнаружен, удалите его через встроенный деинсталлятор.</li>
+            <li><strong>Окончательно отключите Безопасность Windows с помощью программы dControl:</strong> <a href="https://drive.google.com/file/d/19G3C5Gg1KDr1W05jhwwB6xeMx8PG_IrU/view?usp=sharing" target="_blank">Google Drive — ссылка для загрузки (пароль 1234)</a>, <a href="https://disk.yandex.ru/d/pLPzChHbwskWNQ" target="_blank">Yandex Disk — ссылка для загрузки (пароль 1234)</a>, <a href="https://mega.nz/file/5vs2CbzY#xZf5oeRQuNA7uxVMjn9UI84HoaV8cPtYHHm-UE1HM5A" target="_blank">Mega — ссылка для загрузки</a>.</li>
+            <li><strong>Удаление сторонних антивирусов:</strong> для этого я рекомендую использовать утилиту Antivirus Removal Tool. <a href="https://antivirus-removal-tool.com/download/click.php?id=Antivirus_Removal_Tool" target="_blank">Ссылка для загрузки — Antivirus_Removal_Tool.zip</a>. Извлеките файл из архива в любое удобное для вас место. Откройте приложение, затем просканируйте систему на наличие антивирусов, для этого нажмите кнопку Search. После сканирования если антивирус был обнаружен, удалите его через встроенный деинсталлятор.</li>
             <li><strong>Отключение анти-чита других игр:</strong> откройте диспетчер задач и отключите из автозагрузки все анти-читы и лаунчеры.</li>
             <li><strong>Отключение оверлеев:</strong> закройте все оверлеи которые появляются при запуске игры (например Riva, Discord, FPS, Action, Bandicam и прочие). Исключение: Оверлей Nvidia, Epic Games.</li>
             <li><strong>Удалите reshade, redux и моды</strong> если используете.</li>
