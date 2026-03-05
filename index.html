@@ -21,15 +21,16 @@
     }
 
     .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px;
+      max-width: 100%;
+      margin: 0;
+      padding: 40px 80px;
       background: rgba(18, 22, 30, 0.95);
       backdrop-filter: blur(5px);
       border: 1px solid rgba(100, 150, 255, 0.15);
       box-shadow: 0 0 30px rgba(100, 150, 255, 0.1);
       position: relative;
       z-index: 1;
+      min-height: 100vh;
     }
 
     h1 {
@@ -43,7 +44,139 @@
       font-weight: 400;
     }
 
-    /* WHY BEST SECTION - вместо меню */
+    /* КНОПКИ АВТОРИЗАЦИИ */
+    .auth-buttons {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      z-index: 1000;
+      display: flex;
+      gap: 10px;
+    }
+
+    .auth-btn {
+      background: rgba(30, 35, 50, 0.9);
+      border: 1px solid #a0c0ff;
+      color: #a0c0ff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+      font-weight: 500;
+      backdrop-filter: blur(5px);
+    }
+
+    .auth-btn:hover {
+      background: #a0c0ff;
+      color: #0c0f15;
+    }
+
+    .user-info {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      z-index: 1000;
+      background: rgba(30, 35, 50, 0.9);
+      border: 1px solid #a0c0ff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      display: none;
+      align-items: center;
+      gap: 15px;
+      backdrop-filter: blur(5px);
+    }
+
+    .username {
+      color: #a0c0ff;
+      font-weight: bold;
+    }
+
+    .logout-btn {
+      background: transparent;
+      border: 1px solid #ff5555;
+      color: #ff5555;
+      padding: 5px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .logout-btn:hover {
+      background: #ff5555;
+      color: #fff;
+    }
+
+    /* МОДАЛЬНЫЕ ОКНА */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background: #1a1f30;
+      border: 2px solid #a0c0ff;
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 0 50px rgba(100, 150, 255, 0.3);
+    }
+
+    .modal h2 {
+      color: #a0c0ff;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .modal input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      background: #0f1422;
+      border: 1px solid #a0c0ff;
+      border-radius: 8px;
+      color: #fff;
+    }
+
+    .modal button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      background: #a0c0ff;
+      border: none;
+      border-radius: 8px;
+      color: #0c0f15;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .modal button:hover {
+      background: #b0d0ff;
+      transform: translateY(-2px);
+    }
+
+    .modal-close {
+      background: transparent !important;
+      border: 1px solid #a0c0ff !important;
+      color: #a0c0ff !important;
+    }
+
+    .error-message {
+      color: #ff5555;
+      font-size: 0.9rem;
+      margin: 5px 0;
+    }
+
+    /* WHY BEST SECTION */
     .why-best {
       background: rgba(25, 30, 40, 0.7);
       border: 1px solid rgba(100, 150, 255, 0.2);
@@ -108,12 +241,6 @@
       font-weight: 400;
     }
 
-    .highlight-item p {
-      color: #a0a8c0;
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-
     .reviews {
       margin-top: 30px;
       font-size: 1.3rem;
@@ -125,25 +252,13 @@
       font-weight: bold;
     }
 
-    /* Кнопки */
-    .shadow-button {
-      background: rgba(30, 35, 50, 0.8);
-      border: 1px solid rgba(100, 150, 255, 0.3);
-      border-radius: 8px;
-      padding: 12px 24px;
-      color: #e0e0e0;
-      font-weight: 500;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .shadow-button:hover {
-      background: rgba(40, 45, 65, 0.8);
-      border-color: rgba(100, 150, 255, 0.5);
-      color: #ffffff;
+    /* PRICING */
+    .pricing {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 50px 0;
+      flex-wrap: wrap;
     }
 
     .price-card {
@@ -169,14 +284,26 @@
       color: #a0c0ff;
     }
 
-    .pricing {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin: 50px 0;
-      flex-wrap: wrap;
+    .shadow-button {
+      background: rgba(30, 35, 50, 0.8);
+      border: 1px solid rgba(100, 150, 255, 0.3);
+      border-radius: 8px;
+      padding: 12px 24px;
+      color: #e0e0e0;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
+    .shadow-button:hover {
+      background: rgba(40, 45, 65, 0.8);
+      border-color: rgba(100, 150, 255, 0.5);
+      color: #ffffff;
+    }
+
+    /* TRIAL SECTION */
     .trial-section {
       text-align: center;
       margin: 50px 0;
@@ -222,21 +349,7 @@
       border-color: rgba(100, 150, 255, 0.5);
     }
 
-    .cheat-description {
-      margin: 20px 0;
-      font-size: 1.1rem;
-      color: #a0a8c0;
-      line-height: 1.6;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .cheat-description span {
-      color: #a0c0ff;
-    }
-
-    /* Функции */
+    /* FEATURES GRID */
     .features-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -278,7 +391,6 @@
       content: "▹";
       color: #a0c0ff;
       margin-right: 8px;
-      font-size: 0.9rem;
     }
 
     .instruction {
@@ -341,9 +453,55 @@
       color: #607080;
       font-size: 0.9rem;
     }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px 15px;
+      }
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
+  <!-- КНОПКИ ВХОДА/РЕГИСТРАЦИИ (ТО, ЧТО ТЫ ПРОСИЛ) -->
+  <div class="auth-buttons" id="authButtons">
+    <button class="auth-btn" onclick="showLogin()">🔑 Вход</button>
+    <button class="auth-btn" onclick="showRegister()">📝 Регистрация</button>
+  </div>
+
+  <!-- ИНФОРМАЦИЯ О ПОЛЬЗОВАТЕЛЕ (ПОСЛЕ ВХОДА) -->
+  <div class="user-info" id="userInfo">
+    <span class="username" id="usernameDisplay"></span>
+    <button class="logout-btn" onclick="logout()">Выйти</button>
+  </div>
+
+  <!-- МОДАЛЬНОЕ ОКНО ВХОДА -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <h2>🔑 ВХОД В АККАУНТ</h2>
+      <input type="text" id="loginUsername" placeholder="Логин">
+      <input type="password" id="loginPassword" placeholder="Пароль">
+      <div class="error-message" id="loginError"></div>
+      <button onclick="doLogin()">Войти</button>
+      <button class="modal-close" onclick="closeModals()">Закрыть</button>
+    </div>
+  </div>
+
+  <!-- МОДАЛЬНОЕ ОКНО РЕГИСТРАЦИИ -->
+  <div class="modal" id="registerModal">
+    <div class="modal-content">
+      <h2>📝 РЕГИСТРАЦИЯ</h2>
+      <input type="text" id="regUsername" placeholder="Логин">
+      <input type="email" id="regEmail" placeholder="Email">
+      <input type="password" id="regPassword" placeholder="Пароль">
+      <div class="error-message" id="regError"></div>
+      <button onclick="doRegister()">Зарегистрироваться</button>
+      <button class="modal-close" onclick="closeModals()">Закрыть</button>
+    </div>
+  </div>
+
 <div class="container">
   <h1>⚡ SHADOW CHEAT RAGEMP 2026 ⚡</h1>
 
@@ -369,20 +527,20 @@
     <div class="features-highlight">
       <div class="highlight-item">
         <h3>🔒 ПОЛНАЯ АНОНИМНОСТЬ</h3>
-        <p>HWID спуфер, IP ченджер, клинер логов — нас невозможно обнаружить. Работаем через защищенные протоколы.</p>
+        <p>HWID спуфер, IP ченджер, клинер логов — нас невозможно обнаружить.</p>
       </div>
       <div class="highlight-item">
         <h3>⚡ МАКСИМАЛЬНАЯ ПРОИЗВОДИТЕЛЬНОСТЬ</h3>
-        <p>Оптимизированный код не нагружает систему. Стабильные 60+ FPS даже на слабых ПК.</p>
+        <p>Оптимизированный код не нагружает систему. Стабильные 60+ FPS.</p>
       </div>
       <div class="highlight-item">
         <h3>🛡️ ПРОФЕССИОНАЛЬНАЯ ЗАЩИТА</h3>
-        <p>Обход всех известных античитов (RageMP, FiveM). Еженедельные обновления сигнатур.</p>
+        <p>Обход всех известных античитов (RageMP, FiveM).</p>
       </div>
     </div>
 
     <div class="reviews">
-      <span>🔥 БОЛЕЕ 1.300+ ПОЛОЖИТЕЛЬНЫХ ОТЗЫВОВ</span> ОТ ИГРОКОВ
+      <span>🔥 БОЛЕЕ 1.300+ ПОЛОЖИТЕЛЬНЫХ ОТЗЫВОВ</span>
     </div>
   </div>
 
@@ -415,7 +573,7 @@
     <div id="trialMessage"></div>
   </div>
 
-  <!-- ФУНКЦИИ ЧИТА (ЗДЕСЬ ОДИН РАЗ) -->
+  <!-- ФУНКЦИИ ЧИТА -->
   <h2 style="color: #a0c0ff; font-size: 2.2rem; text-align: center; margin: 60px 0 30px; font-weight: 300;">ФУНКЦИИ SHADOW CHEAT</h2>
   
   <div class="features-grid">
@@ -525,10 +683,12 @@
   </div>
 </div>
 
+<!-- СКРИПТЫ -->
 <script>
+  // Состояние пробного ключа
   let trialUsed = false;
 
-  document.getElementById('trialBtn').addEventListener('click', function() {
+  document.getElementById('trialBtn')?.addEventListener('click', function() {
     const msgDiv = document.getElementById('trialMessage');
     
     if (!trialUsed) {
@@ -536,22 +696,111 @@
       
       msgDiv.innerHTML = `
         <div class="trial-key-box">🔑 ${key}</div>
-        
-        <div class="cheat-description">
-          <span>SHADOW CHEAT RAGEMP 2026</span> — лучший софт на рынке с более чем 1300+ отзывами. 
-          Полная анонимность, 50+ функций, защита от всех античитов. Выбирают профи!
+        <div style="margin: 20px 0; color: #a0a8c0;">
+          <span style="color: #a0c0ff;">SHADOW CHEAT RAGEMP 2026</span> — лучший софт на рынке с более чем 1300+ отзывами.
         </div>
-        
-        <a href="#" class="download-link" onclick="alert('Файл будет доступен позже. Заглушка.')">
+        <a href="#" class="download-link" onclick="alert('Файл будет доступен позже. Заглушка.'); return false;">
           <span>📥 СКАЧАТЬ LAUNCHER</span>
           <span style="font-size: 1.8rem;">⬇️</span>
         </a>
       `;
       trialUsed = true;
     } else {
-      msgDiv.innerHTML = '<p style="color: #ff9999; font-size: 1.2rem; margin-top: 20px;">⛔ Ты уже получил пробный ключ. Один ключ на пользователя.</p>';
+      msgDiv.innerHTML = '<p style="color: #ff9999; margin-top: 20px;">⛔ Ты уже получил пробный ключ. Один ключ на пользователя.</p>';
     }
   });
+
+  // ===== АВТОРИЗАЦИЯ =====
+  // Проверка, залогинен ли пользователь
+  fetch('check_session.php')
+    .then(res => res.json())
+    .then(data => {
+      if (data.logged_in) {
+        document.getElementById('authButtons').style.display = 'none';
+        document.getElementById('userInfo').style.display = 'flex';
+        document.getElementById('usernameDisplay').textContent = data.username;
+      }
+    });
+
+  function showLogin() {
+    document.getElementById('loginModal').style.display = 'flex';
+  }
+
+  function showRegister() {
+    document.getElementById('registerModal').style.display = 'flex';
+  }
+
+  function closeModals() {
+    document.getElementById('loginModal').style.display = 'none';
+    document.getElementById('registerModal').style.display = 'none';
+    document.getElementById('loginError').textContent = '';
+    document.getElementById('regError').textContent = '';
+  }
+
+  function doLogin() {
+    const username = document.getElementById('loginUsername').value;
+    const password = document.getElementById('loginPassword').value;
+    
+    if (!username || !password) {
+      document.getElementById('loginError').textContent = 'Заполни все поля!';
+      return;
+    }
+
+    fetch('login.php', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: `username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        location.reload();
+      } else {
+        document.getElementById('loginError').textContent = data.error;
+      }
+    });
+  }
+
+  function doRegister() {
+    const username = document.getElementById('regUsername').value;
+    const email = document.getElementById('regEmail').value;
+    const password = document.getElementById('regPassword').value;
+    
+    if (!username || !email || !password) {
+      document.getElementById('regError').textContent = 'Заполни все поля!';
+      return;
+    }
+
+    if (password.length < 6) {
+      document.getElementById('regError').textContent = 'Пароль минимум 6 символов';
+      return;
+    }
+
+    fetch('register.php', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: `username=${encodeURIComponent(username)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        location.reload();
+      } else {
+        document.getElementById('regError').textContent = data.error;
+      }
+    });
+  }
+
+  function logout() {
+    window.location.href = 'logout.php';
+  }
+
+  // Закрытие модалок по клику на фон
+  window.onclick = function(event) {
+    if (event.target.classList.contains('modal')) {
+      closeModals();
+    }
+  }
 </script>
 </body>
 </html>
