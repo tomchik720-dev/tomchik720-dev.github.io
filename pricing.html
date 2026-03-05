@@ -207,22 +207,34 @@
         <h1 class="page-title">цены</h1>
 
         <div class="features-grid">
-            <!-- Бесплатно 1 день -->
+            <!-- 1 день БЕСПЛАТНО (пробная) -->
             <div class="feature-block">
-                <div class="block-title">🔥 1 день</div>
+                <div class="block-title">🎁 пробная</div>
                 <div class="price-value">0 ₽</div>
                 <ul class="feature-list">
                     <li>Все функции</li>
-                    <li>Доступ 24 часа</li>
-                    <li>Тест перед покупкой</li>
+                    <li>24 часа доступа</li>
+                    <li>Ограничение 1 раз</li>
                 </ul>
-                <button class="price-btn" onclick="generateFreeKey()">выбрать</button>
+                <button class="price-btn" onclick="generateFreeKey()">получить ключ</button>
                 <div id="free-content" class="free-content"></div>
             </div>
 
-            <!-- 7 дней -->
+            <!-- 1 день 200₽ -->
             <div class="feature-block">
-                <div class="block-title">⚡ 7 дней</div>
+                <div class="block-title">⚡ 1 день</div>
+                <div class="price-value">200 ₽</div>
+                <ul class="feature-list">
+                    <li>Все функции</li>
+                    <li>24 часа доступа</li>
+                    <li>Без ограничений</li>
+                </ul>
+                <button class="price-btn" onclick="alert('Оплата временно недоступна')">выбрать</button>
+            </div>
+
+            <!-- 7 дней 450₽ -->
+            <div class="feature-block">
+                <div class="block-title">🔥 7 дней</div>
                 <div class="price-value">450 ₽</div>
                 <ul class="feature-list">
                     <li>Все функции</li>
@@ -232,7 +244,7 @@
                 <button class="price-btn" onclick="alert('Оплата временно недоступна')">выбрать</button>
             </div>
 
-            <!-- 1 месяц -->
+            <!-- 1 месяц 1400₽ -->
             <div class="feature-block">
                 <div class="block-title">💎 1 месяц</div>
                 <div class="price-value">1 400 ₽</div>
@@ -244,7 +256,7 @@
                 <button class="price-btn" onclick="alert('Оплата временно недоступна')">выбрать</button>
             </div>
 
-            <!-- 1 год -->
+            <!-- 1 год 3500₽ -->
             <div class="feature-block">
                 <div class="block-title">👑 1 год</div>
                 <div class="price-value">3 500 ₽</div>
@@ -276,7 +288,7 @@
                 if (i < 2) key += '-';
             }
 
-            const launcherLink = '#'; // сюда ссылку на лаунчер
+            const launcherLink = '#'; // СЮДА ССЫЛКУ НА ЛАУНЧЕР
 
             contentDiv.innerHTML = `
                 <div class="key-box">🔑 ${key}</div>
