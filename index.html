@@ -1,337 +1,375 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shadow cheat</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        body {
-            min-height: 100vh;
-            background: url('ChatGPT Image 5 мар. 2026 г., 21_43_39.png') no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
-        }
+<title>LOVE YOU</title>
 
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 1;
-            pointer-events: none;
-        }
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        .top-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 15px 60px;
-            background: rgba(14, 17, 23, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #2a2f3a;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            gap: 20px;
-            z-index: 1000;
-        }
+    html, body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #020002;
+    }
 
-        /* Баланс */
-        .balance-wrapper {
-            position: relative;
-            z-index: 1001;
-        }
+    body {
+        position: relative;
+    }
 
-        .balance-display {
-            background: transparent;
-            border: 1px solid #4a7eb3;
-            color: #4a7eb3;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: default;
-        }
+    canvas {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        background: #020002;
+    }
 
-        .balance-dropdown {
-            position: absolute;
-            top: 45px;
-            right: 0;
-            background: #1a1f2a;
-            border: 1px solid #2a2f3a;
-            border-radius: 12px;
-            padding: 15px;
-            min-width: 150px;
-            opacity: 0;
-            visibility: hidden;
-            transition: 0.2s;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            text-align: center;
-        }
-
-        .balance-wrapper:hover .balance-dropdown {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .deposit-btn {
-            background: transparent;
-            border: 1px solid #4a7eb3;
-            color: #4a7eb3;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: 0.2s;
-            width: 100%;
-        }
-
-        .deposit-btn:hover {
-            background: #4a7eb3;
-            color: #fff;
-        }
-
-        /* Контакты */
-        .contact-wrapper {
-            position: relative;
-            z-index: 1001;
-        }
-
-        .contact-btn {
-            background: transparent;
-            border: 1px solid #4a7eb3;
-            color: #4a7eb3;
-            padding: 8px 24px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .contact-btn:hover {
-            background: #4a7eb3;
-            color: #fff;
-        }
-
-        .contact-dropdown {
-            position: absolute;
-            top: 45px;
-            right: 0;
-            background: #1a1f2a;
-            border: 1px solid #2a2f3a;
-            border-radius: 12px;
-            padding: 12px 24px;
-            min-width: 200px;
-            opacity: 0;
-            visibility: hidden;
-            transition: 0.2s;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-        }
-
-        .contact-wrapper:hover .contact-dropdown {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .contact-dropdown a {
-            color: #4a7eb3;
-            text-decoration: none;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .contact-dropdown a:hover {
-            color: #fff;
-        }
-
-        .main-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 100px 60px 0;
-            position: relative;
-            z-index: 2;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .left-section {
-            width: 40%;
-        }
-
-        .site-title {
-            font-size: 56px;
-            font-weight: 450;
-            color: #fff;
-            margin-bottom: 45px;
-            letter-spacing: 1.5px;
-        }
-
-        .nav-links {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-            margin-bottom: 40px;
-        }
-
-        .nav-link {
-            color: #ddd;
-            text-decoration: none;
-            font-size: 20px;
-            font-weight: 400;
-            transition: 0.2s;
-            width: fit-content;
-        }
-
-        .nav-link:hover {
-            color: #4a7eb3;
-        }
-
-        .howto-button {
-            background: transparent;
-            border: 2px solid #4a7eb3;
-            color: #4a7eb3;
-            padding: 14px 32px;
-            font-size: 18px;
-            font-weight: 400;
-            cursor: pointer;
-            transition: 0.2s;
-            width: fit-content;
-        }
-
-        .howto-button:hover {
-            background: #4a7eb3;
-            color: #fff;
-        }
-
-        .right-section {
-            width: 35%;
-        }
-
-        .reasons-heading {
-            font-size: 28px;
-            font-weight: 400;
-            color: #fff;
-            margin-bottom: 30px;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-            padding-bottom: 12px;
-        }
-
-        .reason-block {
-            margin-bottom: 25px;
-        }
-
-        .reason-title {
-            color: #4a7eb3;
-            font-size: 18px;
-            margin-bottom: 6px;
-            font-weight: 500;
-        }
-
-        .reason-text {
-            color: #ccc;
-            font-size: 16px;
-            line-height: 1.5;
-        }
-
-        .footer {
-            position: fixed;
-            bottom: 30px;
-            right: 60px;
-            color: #666;
-            font-size: 14px;
-            z-index: 2;
-        }
-
-        @media (max-width: 900px) {
-            .main-content {
-                flex-direction: column;
-                padding: 80px 20px;
-            }
-            .left-section, .right-section {
-                width: 100%;
-            }
-            .right-section {
-                margin-top: 50px;
-            }
-            .top-bar {
-                padding: 15px 20px;
-                gap: 10px;
-            }
-        }
-    </style>
+    /* Подсказка */
+    #hint {
+        position: fixed;
+        bottom: 18px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: rgba(255, 117, 184, 0.35);
+        font-family: Arial, sans-serif;
+        font-size: 11px;
+        pointer-events: none;
+        user-select: none;
+    }
+</style>
 </head>
+
 <body>
-    <div class="top-bar">
-        <!-- Баланс -->
-        <div class="balance-wrapper">
-            <div class="balance-display">💰 0.00 ₽</div>
-            <div class="balance-dropdown">
-                <button class="deposit-btn" onclick="alert('Пополнение временно недоступно')">пополнить баланс</button>
-            </div>
-        </div>
 
-        <!-- Контакты -->
-        <div class="contact-wrapper">
-            <button class="contact-btn">связаться с нами</button>
-            <div class="contact-dropdown">
-                <a href="https://discord.gg/harmonqqgg" target="_blank">💬 Discord: harmonqqgg</a>
-            </div>
-        </div>
-    </div>
+<canvas id="canvas"></canvas>
 
-    <div class="main-content">
-        <div class="left-section">
-            <div class="site-title">Shadow cheat</div>
-            <div class="nav-links">
-                <a href="features.html" class="nav-link">функции</a>
-                <a href="pricing.html" class="nav-link">цены</a>
-                <a href="instruction.html" class="nav-link">инструкция по скачиванию →</a>
-            </div>
-            <button class="howto-button" onclick="window.location.href='howto.html'">как пользоваться</button>
-        </div>
+<div id="hint">Нажмите на экран</div>
 
-        <div class="right-section">
-            <div class="reasons-heading">почему выбирают нас</div>
-            
-            <div class="reason-block">
-                <div class="reason-title">99.8% андетект</div>
-                <div class="reason-text">обходим все современные античиты, включая Easy Anti-Cheat и BattlEye</div>
-            </div>
+<script>
 
-            <div class="reason-block">
-                <div class="reason-title">50+ функций</div>
-                <div class="reason-text">aimbot, esp, stealth, protection — полный набор для комфортной игры</div>
-            </div>
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
 
-            <div class="reason-block">
-                <div class="reason-title">регулярные обновления</div>
-                <div class="reason-text">поддержка актуальных версий RAGEMP и новых серверов</div>
-            </div>
+let W;
+let H;
+let CX;
+let CY;
+let SCALE;
 
-            <div class="reason-block">
-                <div class="reason-title">24/7 поддержка</div>
-                <div class="reason-text">помогаем с установкой и решаем любые проблемы</div>
-            </div>
-        </div>
-    </div>
+const COUNT = 300;
 
-    <div class="footer">harmonqqgg</div>
+const PINK = "#ff1493";
+const PINK_LIGHT = "#ff4fa3";
+const PINK_SOFT = "#ff75b8";
+
+let particles = [];
+let startTime = performance.now();
+
+
+// ============================================================
+// РАЗМЕР CANVAS
+// ============================================================
+
+function resize() {
+
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+    W = window.innerWidth;
+    H = window.innerHeight;
+
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+
+    canvas.style.width = W + "px";
+    canvas.style.height = H + "px";
+
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    CX = W / 2;
+    CY = H / 2;
+
+    // Аналог SCALE = min(W,H)/32
+    SCALE = Math.min(W, H) / 32;
+}
+
+resize();
+
+window.addEventListener("resize", () => {
+    resize();
+    createParticles();
+});
+
+
+// ============================================================
+// ФОРМА СЕРДЦА
+// ============================================================
+
+function heartPoint(t) {
+
+    const x =
+        16 * Math.pow(Math.sin(t), 3);
+
+    const y =
+        13 * Math.cos(t)
+        - 5 * Math.cos(2 * t)
+        - 2 * Math.cos(3 * t)
+        - Math.cos(4 * t);
+
+    return {
+        x: CX + x * SCALE,
+        y: CY - y * SCALE
+    };
+}
+
+
+// ============================================================
+// ПЛАВНОСТЬ
+// ============================================================
+
+function ease(t) {
+
+    return t * t * (3 - 2 * t);
+}
+
+
+// ============================================================
+// СОЗДАЁМ ЧАСТИЦЫ
+// ============================================================
+
+function createParticles() {
+
+    particles = [];
+
+    for (let i = 0; i < COUNT; i++) {
+
+        const t =
+            (i / COUNT) * Math.PI * 2;
+
+        const target =
+            heartPoint(t);
+
+        // Небольшой разброс
+        target.x += random(-5, 5);
+        target.y += random(-5, 5);
+
+        let sx;
+        let sy;
+
+        const side =
+            Math.floor(Math.random() * 4);
+
+        if (side === 0) {
+
+            sx = random(0, W);
+            sy = random(-H, 0);
+
+        } else if (side === 1) {
+
+            sx = random(W, W + 300);
+            sy = random(0, H);
+
+        } else if (side === 2) {
+
+            sx = random(0, W);
+            sy = random(H, H + 300);
+
+        } else {
+
+            sx = random(-300, 0);
+            sy = random(0, H);
+        }
+
+        const size =
+            Math.floor(random(10, 18));
+
+        const colors = [
+            PINK,
+            PINK,
+            PINK_LIGHT,
+            PINK_SOFT
+        ];
+
+        particles.push({
+
+            sx,
+            sy,
+
+            tx: target.x,
+            ty: target.y,
+
+            size,
+
+            color:
+                colors[
+                    Math.floor(
+                        Math.random() *
+                        colors.length
+                    )
+                ],
+
+            delay:
+                i * 0.018
+        });
+    }
+}
+
+
+// ============================================================
+// RANDOM
+// ============================================================
+
+function random(min, max) {
+
+    return Math.random() *
+        (max - min) +
+        min;
+}
+
+
+// ============================================================
+// РИСУЕМ LOVE YOU
+// ============================================================
+
+function drawText(text, x, y, size, color) {
+
+    ctx.font =
+        `bold ${size}px Arial`;
+
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+
+    ctx.fillStyle = color;
+
+    ctx.fillText(
+        text,
+        x,
+        y
+    );
+}
+
+
+// ============================================================
+// АНИМАЦИЯ
+// ============================================================
+
+function animate(now) {
+
+    const currentTime =
+        (now - startTime) / 1000;
+
+    ctx.clearRect(
+        0,
+        0,
+        W,
+        H
+    );
+
+    for (const p of particles) {
+
+        // Слово ещё не появилось
+        if (currentTime < p.delay) {
+            continue;
+        }
+
+        let progress =
+            (currentTime - p.delay) / 2.5;
+
+        progress =
+            Math.max(
+                0,
+                Math.min(
+                    1,
+                    progress
+                )
+            );
+
+        const smooth =
+            ease(progress);
+
+        // Полёт к сердцу
+        let x =
+            p.sx +
+            (p.tx - p.sx) *
+            smooth;
+
+        let y =
+            p.sy +
+            (p.ty - p.sy) *
+            smooth;
+
+        // Лёгкое колебание
+        if (progress < 1) {
+
+            const wave =
+                Math.sin(
+                    currentTime * 5 +
+                    p.delay * 8
+                ) *
+                4 *
+                (1 - smooth);
+
+            x += wave;
+        }
+
+        drawText(
+            "LOVE YOU",
+            x,
+            y,
+            p.size,
+            p.color
+        );
+    }
+
+    requestAnimationFrame(animate);
+}
+
+
+// ============================================================
+// ЗАПУСК
+// ============================================================
+
+createParticles();
+
+requestAnimationFrame(animate);
+
+
+// ============================================================
+// НАЖАТИЕ НА ЭКРАН — ЗАПУСК ЗАНОВО
+// ============================================================
+
+document.addEventListener("click", () => {
+
+    startTime = performance.now();
+
+    createParticles();
+
+});
+
+
+// ============================================================
+// TOUCH
+// ============================================================
+
+document.addEventListener(
+    "touchstart",
+    () => {
+
+        startTime = performance.now();
+
+        createParticles();
+
+    },
+    { passive: true }
+);
+
+</script>
+
 </body>
 </html>
